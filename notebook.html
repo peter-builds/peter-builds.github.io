@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engineering field notes from Peter Perez: experiments, iterations, decisions, and lessons from the workbench.">
+    <title>Engineering Notebook | Peter Builds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Peter Builds home"><img src="assets/brand/IMG_2809.PNG" alt="Peter Builds"></a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="projects.html">Work</a><a href="notebook.html" aria-current="page">Notebook</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <a class="header-social" href="https://www.instagram.com/peter_builds_/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+        <section class="page-heading">
+            <div class="page-width">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Engineering notebook / Field notes</p>
+                <h1>Keep the useful bits.</h1>
+                <p>Small tests, unexpected problems, and the decisions that move a build forward. These first entries are drawn from my 2024 Fab Academy work; newer notes will build on the same practice.</p>
+            </div>
+        </section>
+        <section class="notebook-list page-width">
+            <article class="notebook-entry">
+                <div class="entry-meta">Fab Academy <span>2024 / Electronics</span></div>
+                <div>
+                    <h2>Make a failure visible</h2>
+                    <p class="entry-lead">After eight board iterations, status LEDs became one of the most useful debugging tools in the system. They made it easier to tell whether a subsystem was running before reaching for another instrument.</p>
+                    <div class="entry-notes">
+                        <div><h3>Question</h3><p>How can I tell what the circuit is doing while the full robot is assembled?</p></div>
+                        <div><h3>Test</h3><p>Use visible indicators while checking connections and running separate code loops.</p></div>
+                        <div><h3>Takeaway</h3><p>Design for observability. A small signal can save a lot of blind debugging.</p></div>
+                    </div>
+                    <div class="entry-gallery" aria-label="DAP-R circuit board iterations">
+                        <figure><img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Boards%20old.JPG" alt="Earlier DAP-R circuit board iterations" loading="lazy"><figcaption>Earlier board iterations</figcaption></figure>
+                        <figure><img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Final%20Board.JPG" alt="Final DAP-R control board with status indicator LEDs" loading="lazy"><figcaption>Final board with status indicators</figcaption></figure>
+                    </div>
+                    <a class="notebook-source" href="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/final-project.html" target="_blank" rel="noopener noreferrer">Source: DAP-R final project documentation <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="notebook-entry">
+                <div class="entry-meta">Fab Academy <span>2024 / Fabrication</span></div>
+                <div>
+                    <h2>A bowtie for the laser cutter</h2>
+                    <p class="entry-lead">The 3D-printed bowtie was not giving the finish I wanted, so I moved the decorative part to the laser cutter and kept a printed adaptor for the servo. That split made the bowtie easy to swap.</p>
+                    <div class="entry-notes">
+                        <div><h3>Change</h3><p>Separate the visible part from the mechanism that attaches it to the robot.</p></div>
+                        <div><h3>Result</h3><p>Laser-cut versions in blue acrylic and walnut fit the same printed adaptor.</p></div>
+                        <div><h3>Takeaway</h3><p>Modularity can come from choosing the right process for each part.</p></div>
+                    </div>
+                    <div class="entry-gallery entry-gallery-single" aria-label="Laser-cut interchangeable DAP-R bowties">
+                        <figure><img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Bowties.JPG" alt="Interchangeable DAP-R bowties made from acrylic and walnut" loading="lazy"><figcaption>Two materials, one adaptor</figcaption></figure>
+                    </div>
+                    <a class="notebook-source" href="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/final-project.html" target="_blank" rel="noopener noreferrer">Source: DAP-R final project documentation <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="notebook-entry">
+                <div class="entry-meta">Fab Academy <span>2024 / Integration</span></div>
+                <div>
+                    <h2>Scope down, keep the interaction</h2>
+                    <p class="entry-lead">A fully mobile robot and spoken interaction were part of the original ambition. The integration work made clear that a stable desktop build with a moving head and responsive face was a better target for the time available.</p>
+                    <div class="entry-notes">
+                        <div><h3>Constraint</h3><p>Many subsystems still needed to work together in a short build window.</p></div>
+                        <div><h3>Decision</h3><p>Defer roaming and speech; focus on the head, screen, sensor, motor, and servo.</p></div>
+                        <div><h3>Takeaway</h3><p>Reducing scope is useful when it preserves the core experience and makes integration testable.</p></div>
+                    </div>
+                    <div class="entry-gallery entry-gallery-single" aria-label="DAP-R robot integration and final build">
+                        <figure><img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Final.JPG" alt="Integrated DAP-R desktop robot" loading="lazy"><figcaption>The desktop build after integration</figcaption></figure>
+                    </div>
+                    <a class="notebook-source" href="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/final-project.html" target="_blank" rel="noopener noreferrer">Source: DAP-R final project documentation <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="page-width footer-inner"><a class="footer-brand" href="index.html">Peter Builds <span> / Make. Learn. Repeat.</span></a><a href="mailto:peter@peter-builds.com">peter@peter-builds.com</a><p>Miami, Florida / 2026</p></div></footer>
+</body>
+</html>

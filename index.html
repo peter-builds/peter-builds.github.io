@@ -3,47 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAGIS ET INGENIUM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <meta name="description" content="Peter Perez is an engineer, maker, and educator building projects and programs through hands-on learning.">
+    <title>Peter Builds | Engineering, Making, Teaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sticky Header -->
-    <div class="sticky-header">
-        <header class="profile-section">
-            <div class="profile-container">
-                <img src="mig-images/Magis_et_Ingenium_Seal_Gold.png" alt="Profile Picture" class="profile-image">
-                <div class="profile-details">
-                    <h1 class="site-title">Magis et Ingenium Guild</h1>
-                    <p class="tagline">Ars. Ratio. Servitium.</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Navigation Bar-->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="m-e-i-guild-register.html">Guild Register</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Peter Builds home">
+            <img src="assets/brand/IMG_2809.PNG" alt="Peter Builds">
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="projects.html">Work</a>
+            <a href="notebook.html">Notebook</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
-    </div>
+        <a class="header-social" href="https://www.instagram.com/peter_builds_/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+    </header>
 
+    <main id="main">
+        <section class="hero page-width">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Engineer / Maker / Educator</p>
+                <h1>Make the idea<br><em>real.</em></h1>
+                <p class="hero-intro">I'm Peter Perez. I build robots, fabrication programs, and learning experiences that help people turn curiosity into capability.</p>
+                <div class="hero-actions">
+                    <a class="button button-dark" href="projects.html">Explore the work <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="about.html">A little about me</a>
+                </div>
+                <p class="hero-location">Based in Miami, Florida <span aria-hidden="true">/</span> Building for curious people everywhere</p>
+            </div>
+            <figure class="hero-figure">
+                <img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Final.JPG" alt="DAPR, a layered desktop robot designed and fabricated by Peter Perez" fetchpriority="high">
+                <figcaption><span>01 / DAP-R</span> A desktop robot with room for personality.</figcaption>
+                <span class="figure-stamp" aria-hidden="true">BUILT<br>BY HAND</span>
+            </figure>
+        </section>
 
-    <!-- Main Content -->
-    <main>
-        <section style="text-align: center; padding: 5rem 1rem;">
-            <h2 style="font-size: 2.5rem; color: #00BFFF;">Page Under Construction</h2>
-            <p style="font-size: 1.5rem; color: #99FF33;">This page is being built with innovation and creativity. Check back soon!</p>
-            <img src="mig-images/MeG-UC-SNES.png" alt="Under Construction Placeholder" style="margin-top: 2rem; border: 4px solid #00BFFF; border-radius: 10px; box-shadow: 0 0 15px #99FF33; max-width:80%">
+        <section class="practice-band" aria-label="Areas of practice">
+            <div class="page-width practice-items">
+                <span>Digital fabrication</span>
+                <span>Robotics &amp; embedded systems</span>
+                <span>Project-based learning</span>
+                <span>Engineering education</span>
+            </div>
+        </section>
+
+        <section class="section page-width selected-work">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">A few things I've made possible</p>
+                    <h2>Selected work</h2>
+                </div>
+                <a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span></a>
+            </div>
+            <a class="featured-project" href="projects.html#dap-r">
+                <img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20v2.jpg" alt="DAPR robot prototype showing its modular body and expressive design" loading="lazy">
+                <div class="featured-project-copy">
+                    <p class="project-kicker">01 / Personal engineering</p>
+                    <h3>DAP-R: a robot with a point of view</h3>
+                    <p>A modular desktop companion, built through iterative CAD, electronics, fabrication, and plenty of debugging.</p>
+                    <span class="text-link">See the build <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+            <div class="work-list">
+                <a class="work-row" href="projects.html#innovation-center">
+                    <span class="work-number">02</span>
+                    <span class="work-title">From two printers to a 9,000 sq. ft. innovation center</span>
+                    <span class="work-type">Program building</span>
+                    <span class="row-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="work-row" href="projects.html#bioreactor">
+                    <span class="work-number">03</span>
+                    <span class="work-title">A six-well electrode for cell research</span>
+                    <span class="work-type">Biomedical engineering</span>
+                    <span class="row-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="notebook-band">
+            <div class="page-width notebook-callout">
+                <div class="notebook-mark" aria-hidden="true">PB<br>FIELD<br>NOTES</div>
+                <div>
+                    <p class="eyebrow">The work between the milestones</p>
+                    <h2>Good notes make better builds.</h2>
+                    <p>Experiments, false starts, and small discoveries from the workbench. The first notes revisit the DAP-R build; the next ones will follow whatever I'm making now.</p>
+                </div>
+                <a class="button button-outline" href="notebook.html">Open the notebook <span aria-hidden="true">↗</span></a>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© Magis et Ingenium - Belen Jesuit 2025</p>
+    <footer class="site-footer">
+        <div class="page-width footer-inner">
+            <a class="footer-brand" href="index.html">Peter Builds <span> / Make. Learn. Repeat.</span></a>
+            <a href="mailto:peter@peter-builds.com">peter@peter-builds.com</a>
+            <p>Miami, Florida <span aria-hidden="true">/</span> <span id="year">2026</span></p>
+        </div>
     </footer>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
