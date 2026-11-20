@@ -43,6 +43,7 @@ Peter Perez is a working engineer-educator. He grew a two-printer program into a
 - Display face: **TrashHand** (freeware, `assets/brand/trashhand/`), already in use.
 - Voice: first person, warm, plain, a little wry ("Strong coffee and freshly baked bread are reliable parts of the process"). Honest about failure ("Almost seared a board…").
 - Tagline: "Make. Learn. Repeat."
+- Mono labels are a deliberate style choice (Peter likes their slightly cyberpunk, readout feel): eyebrows, index numbers like "01 / Personal engineering", and ↗ arrows stay. Don't strip them to reduce a "template" feel; make them earn it through placement and treatment instead. (Confirmed 2026-11-20.)
 - Identity: Cuban-American engineer and educator from Miami.
 
 ## Evidence on Hand

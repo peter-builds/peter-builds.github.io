@@ -1,121 +1,121 @@
 ---
 name: Peter Builds
-description: Make. Learn. Repeat. A maker-educator's workbench notebook on the web.
+description: Make. Learn. Repeat. An open, still-unfinished build manual where every notebook entry is a numbered step.
 colors:
-  forest: "#1d4530"
-  rust: "#b5432e"
+  stock: "#ffffff"
   ink: "#171a17"
-  paper: "#f7f7f4"
-  white: "#ffffff"
-  sage: "#e8eee7"
-  muted: "#5d645e"
-  line: "#d5d8d2"
-  body-soft: "#46514b"
+  forest: "#1d4530"
+  forest-deep: "#12301f"
+  forest-screen: "#e7eee9"
+  forest-hair: "#a9bcb0"
+  rust: "#b5432e"
+  muted: "#4f5751"
+  hair: "#cdd3ce"
   on-ink-muted: "#c3cbc4"
-  on-forest-soft: "#d9e3d6"
 typography:
   display:
     fontFamily: "TrashHand, 'Comic Sans MS', cursive"
-    fontSize: "5.5rem"
+    fontSize: "5.75rem"
     fontWeight: 400
-    lineHeight: 1.1
+    lineHeight: 0.95
+  numeral:
+    fontFamily: "TrashHand, 'Comic Sans MS', cursive"
+    fontSize: "11rem"
+    fontWeight: 400
+    lineHeight: 0.8
+    letterSpacing: "-0.02em"
   headline:
     fontFamily: "TrashHand, 'Comic Sans MS', cursive"
     fontSize: "3.6rem"
     fontWeight: 400
-    lineHeight: 1.1
+    lineHeight: 1
   title:
-    fontFamily: "TrashHand, 'Comic Sans MS', cursive"
-    fontSize: "2.7rem"
-    fontWeight: 400
-    lineHeight: 1.1
+    fontFamily: "'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Avenir Next', sans-serif"
+    fontSize: "1.85rem"
+    fontWeight: 800
+    lineHeight: 1.15
   body:
-    fontFamily: "'DM Sans', 'Avenir Next', sans-serif"
-    fontSize: "16px"
+    fontFamily: "'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Avenir Next', sans-serif"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.6
   body-strong:
-    fontFamily: "'DM Sans', 'Avenir Next', sans-serif"
-    fontSize: "0.9rem"
-    fontWeight: 600
-    lineHeight: 1.65
+    fontFamily: "'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Avenir Next', sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 700
+    lineHeight: 1.4
   label:
-    fontFamily: "'IBM Plex Mono', monospace"
-    fontSize: "0.72rem"
+    fontFamily: "'Martian Mono', ui-monospace, 'SF Mono', Menlo, monospace"
+    fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0em"
-  quote:
-    fontFamily: "Georgia, 'Times New Roman', serif"
-    fontSize: "1.35rem"
-    fontWeight: 400
-    lineHeight: 1.45
+    letterSpacing: "0.01em"
+    fontVariation: "'wdth' 87.5"
 rounded:
   none: "0px"
   dot: "50%"
-  stamp: "46% 54% 43% 57%"
 spacing:
-  gutter-sm: "18px"
-  gutter-md: "20px"
-  gutter-lg: "32px"
-  row-gap: "22px"
-  block-sm: "38px"
-  block-md: "48px"
-  band: "68px"
-  section: "108px"
-  container: "1180px"
+  gutter: "32px"
+  gutter-mobile: "20px"
+  box-pad: "10px 12px"
+  panel-pad: "18px 20px"
+  entry-gap: "40px"
+  section: "88px"
+  container: "1240px"
 components:
   button-dark:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
+    textColor: "{colors.stock}"
     typography: "{typography.body-strong}"
     rounded: "{rounded.none}"
-    padding: "0.7rem 1.05rem"
+    padding: "0.7rem 1.1rem"
     height: "48px"
   button-dark-hover:
     backgroundColor: "{colors.forest}"
-    textColor: "{colors.white}"
+    textColor: "{colors.stock}"
   button-outline:
-    backgroundColor: "transparent"
+    backgroundColor: "{colors.stock}"
     textColor: "{colors.ink}"
     typography: "{typography.body-strong}"
     rounded: "{rounded.none}"
-    padding: "0.7rem 1.05rem"
+    padding: "0.7rem 1.1rem"
     height: "48px"
   button-outline-hover:
-    backgroundColor: "{colors.sage}"
+    backgroundColor: "{colors.forest-screen}"
     textColor: "{colors.ink}"
-  text-link:
-    textColor: "{colors.ink}"
+  nav-link-current:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.stock}"
     typography: "{typography.body-strong}"
-  text-link-hover:
-    textColor: "{colors.forest}"
-  nav-link:
-    textColor: "{colors.ink}"
-    typography: "{typography.body-strong}"
-    padding: "0.5rem 0"
-  subject-band:
-    backgroundColor: "{colors.forest}"
-    textColor: "{colors.white}"
-    height: "72px"
-  figure-stamp:
+    padding: "0.45rem 0.85rem"
+  readout-focus:
     backgroundColor: "{colors.rust}"
-    textColor: "{colors.white}"
+    textColor: "{colors.stock}"
     typography: "{typography.label}"
-    rounded: "{rounded.stamp}"
-    size: "94px"
-  featured-card:
-    backgroundColor: "{colors.white}"
+    padding: "9px 14px"
+  box-header:
+    backgroundColor: "{colors.forest}"
+    textColor: "{colors.stock}"
+    typography: "{typography.label}"
+    padding: "6px 10px"
+  box-header-takeaway:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.stock}"
+  callout-label:
+    backgroundColor: "{colors.stock}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "44px"
-  page-heading:
-    backgroundColor: "{colors.sage}"
+    typography: "{typography.label}"
+    padding: "5px 8px"
+  parts-chip:
+    backgroundColor: "{colors.forest-screen}"
     textColor: "{colors.ink}"
-    padding: "94px 0 56px"
+    padding: "3px 8px"
+  practice-band:
+    backgroundColor: "{colors.forest}"
+    textColor: "{colors.stock}"
   footer:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
+    textColor: "{colors.stock}"
     height: "100px"
 ---
 
@@ -123,147 +123,133 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Workbench Notebook"**
+**Creative North Star: "The Build Manual"**
 
-Think of an engineer's ruled notebook lying open on a wood workbench. Headlines are written by hand in TrashHand, as if marked with a fat marker. Labels look like field notes stamped in mono type. Hairline rules separate one entry from the next, like lines on graph paper. The photos show real parts on real benches: perfboard, LED rings, a laser-cut bowtie. Nothing is mocked up. The page is the notebook, so the design steps back and lets the build show through.
+The site is an open kit instruction manual that is still being written. Every notebook entry is a numbered build step: a giant hand-lettered step numeral, a framed photo with leader-line callouts naming the real parts, a parts box, and the Question / Test / Takeaway fields a student can copy. The manual is printed in two colors on bright white stock: ink for structure, deep forest for headers and bands. Workbench Rust is held back to mark the one step in focus and its callouts. Everything is square, ruled, and labeled, the way a manual teaches a 12-year-old to build something without anyone standing over them.
 
-Density is calm and editorial: wide margins, generous vertical rhythm, and long text columns capped near 700px. Personality lives in a few deliberate spots: the handwritten display face, a rotated rust stamp, and the deep forest band. Everything else stays disciplined so the playful parts read as intentional. The site is light, paper-toned, and flat. It should feel like it could be printed, photocopied, and taped to a lab wall.
+Personality comes from three places only: the TrashHand step numerals and headlines, the readout labels (an instrument-panel, slightly cyberpunk voice Peter chose deliberately), and real build photography annotated like a parts diagram. Body text is set in Atkinson Hyperlegible Next, a face designed for legibility, because the readers are young and the entries are long. The page is flat. Heavy 2px ink rules and boxed panels give it its structure.
 
 **Key Characteristics:**
-- Handwritten display headlines over a clean geometric sans body.
-- Mono labels for metadata: dates, project numbers, Question / Test / Takeaway.
-- Square corners and 1px rules throughout. The only round shapes are the organic stamp blob and the status dot.
-- Flat surfaces. Depth comes from tonal blocks (paper → white → sage → forest → ink), never shadows.
-- Two accents with fixed jobs: forest for emphasis, state, and bands; rust for labels, underlines, and stamps.
-- Real build photography with 1px line borders and mono captions.
+- Two-color print on white: ink for structure, forest as the second color, rust only on the step in focus.
+- Steps number themselves per project (oldest = 01), so new entries are a straight copy-paste.
+- Giant TrashHand step numerals; long titles in bold Atkinson for legibility.
+- Boxed fields with forest header strips (Parts, Question, Test) and an ink strip for Takeaway.
+- Fixed-ratio photo frames with edge codes (S03 / F02) and leader-line part callouts.
+- Square corners, 2px ink rules, no shadows except the small lift under callout dots.
 
 ## Colors
 
-The palette is paper and ink with two shop-floor accents: Peter's favorite deep forest green and a red-leaning rust.
+The palette is a two-color print run on white stock, plus one marking ink.
 
 ### Primary
-- **Deep Forest** (forest): The signature color. It fills the subject band, sets the italic emphasis word in the hero ("*real*"), is the hover color for buttons, row titles, and links, and colors the Question / Test / Takeaway headings and the top rule on project facts. Strong enough to carry white text (10.8:1).
+- **Deep Forest** (forest): The second print color. It's used for box header strips, the practice band, the italic-weight emphasis word in the cover ("real."), button and link hover, and older step numerals in the notebook. White text on it reads at 10.8:1.
 
 ### Secondary
-- **Workbench Rust** (rust): The marking color. It's used for mono labels (entry meta, project numbers, timeline dates), link underlines, nav-active bars, the eyebrow dot, the arrow on contact rows, and the rotated "Built by hand" stamp. It is tuned redder than the original and passes AA on paper (5.1:1), sage (4.7:1), and under white text (5.5:1).
+- **Workbench Rust** (rust): The marking ink, used only for focus: the "Latest step" readout cell, the latest step's numeral, callout dots, the PENDING stamp, link underlines, the eyebrow dot, and the focus ring. It passes AA on white (5.5:1).
 
 ### Neutral
-- **Shop Ink** (ink): Primary text, the solid button, the footer, and 1px outline borders.
-- **Notebook Paper** (paper): The page background. It's a barely warm off-white, not stark white.
-- **Clean Sheet** (white): The header bar, the featured project card, and the about aside. It's one step brighter than paper, used to lift a surface without a shadow.
-- **Sage Wash** (sage): Page headers, the notebook callout band, the hover fill on outline buttons, the image backdrop. It is the quiet tonal layer.
-- **Pencil Gray** (muted): Secondary copy, captions, mono metadata (5.7:1 on paper).
-- **Soft Graphite** (body-soft): Long-form body on About and note text in the notebook. It sits between ink and muted.
-- **Ruled Line** (line): Every hairline divider, image border, and header bottom border.
-- **Footer Fog** (on-ink-muted) and **Band Mist** (on-forest-soft): Muted text on the ink footer and the slash separators on the forest band.
+- **Manual Stock** (stock): The page ground and every panel surface.
+- **Shop Ink** (ink): Text, 2px structural rules, panel borders, the current-page nav tab, the Takeaway header strip, and the footer.
+- **Forest Screen** (forest-screen): A 10% forest tint for parts chips, the "How to read a step" band, photo backdrops, and the outline-button hover.
+- **Forest Hair** (forest-hair): Dividers inside the forest band and the dotted contents leaders.
+- **Pencil Gray** (muted): Secondary copy and mono metadata (7.5:1 on white).
+- **Hairline** (hair): Placeholder bars in the anatomy diagram.
+- **Footer Fog** (on-ink-muted): Muted text on the ink footer.
 
 ### Named Rules
-**The Two Jobs Rule.** Forest means "this is the thing / this is active." Rust means "this is a label or a mark." Don't swap them: a rust hover state or a forest metadata label breaks the grammar.
+**The Two-Color Rule.** Structure is ink, the second color is forest, and that is the whole print run. Rust is not a third color; it is a marker for the one thing in focus.
 
-**The Paper First Rule.** Most of any screen is paper, white, or sage. Forest appears as one band or as small accents, and rust only as marks. If an accent covers more than a band's worth of a view, pull it back.
+**The One Focus Rule.** At any moment, rust marks one step: the latest on load, or the `:target` step when someone jumps to it. Two rust numerals on one screen means the focus has been lost.
 
 ## Typography
 
 **Display Font:** TrashHand (self-hosted at `assets/brand/trashhand/TrashHand.ttf`, with a Comic Sans MS / cursive fallback)
-**Body Font:** DM Sans (with Avenir Next, sans-serif)
-**Label/Mono Font:** IBM Plex Mono (with monospace)
-**Quote Font:** Georgia (only for the About pull-quote aside)
+**Body Font:** Atkinson Hyperlegible Next (with Atkinson Hyperlegible, Avenir Next, sans-serif)
+**Label/Mono Font:** Martian Mono at width 87.5 (with ui-monospace)
 
-**Character:** A loose hand-lettered marker voice paired with a friendly, precise geometric sans. It reads like a teacher's whiteboard headline above clean lab instructions. The mono type is used only for real metadata such as dates, indices, field names, and captions.
+**Character:** A marker-pen hand for numbers and short headlines, a legibility-first sans for everything a kid has to actually read, and a narrow instrument mono for readouts.
 
 ### Hierarchy
-- **Display** (TrashHand 400, 5.5rem, then 4.7rem at ≤900px and 4rem at ≤620px; line-height 1.1): The home hero headline only.
-- **Headline** (TrashHand 400, 3.6rem, page headings 4.8rem, both 2.75rem on mobile; line-height 1.05–1.1): Section titles and page `h1`s.
-- **Title** (TrashHand 400, 2.7rem, 2.15rem on mobile): Notebook entry titles and featured project titles. Project entries use 3rem, work rows 1.8rem, and the timeline heading 2rem.
-- **Body** (DM Sans 400, 16px, 15px on mobile; line-height 1.65): All running copy. Lead paragraphs step up to 1.05–1.2rem. Measure is capped at roughly 680–720px.
-- **Body Strong** (DM Sans 600, 0.85–0.92rem): Nav links, buttons, text links, contact values.
-- **Label** (IBM Plex Mono 400, 0.68–0.78rem, line-height 1.5, often uppercase): Eyebrows, entry meta, project numbers, timeline dates, figure captions, fact `dt`s, footer lines. Question / Test / Takeaway headings use weight 500 in forest.
+- **Numeral** (TrashHand 400, 11rem on home and 7.5rem in the notebook, scaling to 4.25–4.5rem on phones; line-height 0.8): Step numbers only.
+- **Display** (TrashHand 400, clamp 3–5.75rem, line-height 0.95): The home cover line.
+- **Headline** (TrashHand 400, 3.6rem; page h1s 4.6rem; 2.9rem on phones): Section and page titles. Keep these short.
+- **Title** (Atkinson 800, 1.85rem in the notebook, 1.45rem in the step panel, 2.3–2.4rem for project titles): Long titles. They're never set in TrashHand, whose capital C reads as "(".
+- **Body** (Atkinson 400, 17px / 16px on phones, line-height 1.6, max about 72ch): All running copy.
+- **Body Strong** (Atkinson 700, 0.9–0.95rem): Nav, buttons, links, parts chips.
+- **Label** (Martian Mono 400 at width 87.5, 0.75rem, uppercase for readouts): Eyebrows, readout cells, box headers, edge codes, captions, dates.
 
 ### Named Rules
-**The Hand-Lettered Headline Rule.** TrashHand is only for headlines and the footer wordmark, always at weight 400 and never bolded or italicized synthetically. Body text, buttons, and labels never use it.
+**The Short Hand Rule.** TrashHand only sets numerals and short headlines (about six words or fewer). Anything a reader has to work through goes in Atkinson.
 
-**The Real Metadata Rule.** Mono type marks facts such as dates, numbers, field names, and captions. It is never used as decoration on prose.
+**The Readout Label Rule.** The mono labels (eyebrows, "01 / …" indices, ↗ arrows, readout cells) are a chosen signature with a slightly cyberpunk, instrument-readout feel. Keep them, make them distinctive through placement and treatment, and never set them below 12px.
 
 ## Layout
 
-The container is `min(1180px, 100% − 64px)`. That becomes `min(100% − 40px, 720px)` at ≤900px and `100% − 36px` at ≤620px. The header bar runs full-bleed with the same inner alignment.
+The container is `min(1240px, 100% − 64px)`, with 20px gutters at 900px and below. The home page opens with a **cover strip** (the display line and eyebrow on the left; intro, actions and location on the right) over a full-width **step panel**: a readout bar across the top, then three columns of 190px numeral, a 16:9 photo frame, and a 280–340px side column (title, Parts box, Takeaway box, open-notebook action).
 
-The main pattern is a **ledger column**: a narrow left rail for metadata next to a wide content column. Notebook entries use a 190px rail, project entries a 0.28fr rail, the timeline 130px, and contact rows 120px. Below 620px the rail stacks above the content. The home hero is a two-column split (0.95fr / 1.05fr) that becomes a single column on mobile.
+Notebook entries are **step pages**: a 200px sticky rail (project, year / discipline, giant numeral) beside the content column, inside a 2px ink border, with 40px between steps. A **step index** under the notebook heading groups step numbers by project, with the latest in rust. Below 1080px the step panel's side column drops under the photo. At 620px and below everything stacks; on the home page the step panel moves directly under the cover line, and the open-notebook action moves above the boxes so the step and its action fit the first screen.
 
-Vertical rhythm: sections have 108px of padding (68px on mobile), bands 68px (42px), page headings 94px top and 56px bottom (62/38), entries 38–48px (28–30). Small groups sit 12–22px apart. Three-up grids (entry notes, project facts) collapse to one column at ≤620px. Galleries are two-up with 4:3 crops.
-
-Breakpoints are 900px (tablet: the nav wraps to its own row and gaps tighten) and 620px (phone: everything stacks).
+Rhythm: sections have 88px of padding (60px on phones), panels 18–26px, boxes 10–12px.
 
 ## Elevation & Depth
 
-The system is entirely flat. There are no box-shadows anywhere. Depth comes from **tonal stepping**: paper is the ground, white lifts a featured surface, sage marks a quiet zone (page headers, the notebook band), forest marks a loud band, and ink closes the page in the footer. The hero image sits on an offset sage block peeking out behind its top-right corner, which gives a cut-paper layering instead of a drop shadow. Motion stays physical and small: buttons rise 2px on hover, nav underlines draw in from the left over 180ms, and the hero copy and figure fade up 12px on load. All of it is disabled under `prefers-reduced-motion`.
+The manual is flat: depth comes from boxes and rules, not shadows. 2px ink borders make panels; 1px ink borders make fields inside them; forest header strips label each field. The one exception is a small shadow (`0 1px 3px rgba(23,26,23,.45)`) under callout dots, together with a white keyline on leader lines, so the annotations read against busy photos.
 
 ### Named Rules
-**The No-Shadow Rule.** Surfaces never cast shadows. To lift something, change its tone (paper → white) or put an offset sage block behind it.
+**The Boxed, Not Lifted Rule.** To separate something, box it and label the box. Never float it on a shadow.
 
 ## Shapes
 
-Corners are square (0px) on every button, card, image, band, and field. Edges are drawn with 1px rules: line-gray for dividers and image borders, ink for button outlines and the forest band's top and bottom. Two shapes break the grid on purpose. One is the **organic stamp blob** (`border-radius: 46% 54% 43% 57%`), used for the rust "Built by hand" stamp (rotated 9°) and the outlined "PB Field Notes" mark (rotated −8°). The other is the small 9px circular **status dot** before eyebrows. Accent rules carry meaning: a 2px forest top rule heads each project fact, a 4px rust left rule marks the About pull-quote, and a 2px rust underline marks the active nav item.
+Every corner is square. The only round shapes are the 9px eyebrow dot, the white-ringed rust callout dots, and the dot inside the "Latest step" readout cell. Frames hold fixed ratios: 16:9 for lead photos, 4:3 for gallery photos, and 21:9 for a lone last gallery image. Leader lines run horizontally from the dot to a boxed label, to the right by default or to the left with `data-side="left"`.
 
 ## Components
 
 ### Buttons
-Hand-cut and honest: square, outlined, and they move a little when touched.
-- **Shape:** Square corners (0px), 1px ink border, 48px minimum height, padding 0.7rem × 1.05rem, DM Sans 600 at 0.9rem. A trailing ↗ arrow sits in a spaced span.
-- **Dark:** Ink fill with white text. On hover the fill and border turn deep forest and the button rises 2px.
-- **Outline:** Transparent with ink text and border. On hover it fills with sage and rises 2px.
-- **Transitions:** background, color, and transform over 160ms ease.
-
-### Text Links
-- Ink text, DM Sans 600, with a 1px rust underline offset 4–5px. Hover turns the text forest. Archive and source links start forest with the same rust underline.
+Hand-cut and honest.
+- **Shape:** Square, 2px ink border, 48px minimum height, Atkinson 700.
+- **Dark:** Ink fill. On hover it turns forest and rises 2px.
+- **Outline:** White fill. On hover it fills with forest screen and rises 2px.
 
 ### Navigation
-- A white header bar (88px minimum height, 1px line bottom border). The PB logo sits left (136×60), links in the center, Instagram ↗ on the right in forest.
-- Links are DM Sans 600 at 0.91rem. On hover, and on `aria-current="page"`, a 2px rust bar scales in from the left beneath the link.
-- At ≤900px the links wrap to a full-width second row with space between them. At ≤620px they shrink to 0.82rem.
+- A white bar with a 2px ink bottom rule. Links are Atkinson 700 tabs; hover adds a 1px ink outline, and the current page is a solid ink tab with white text. Instagram ↗ sits on the right in forest.
 
-### Ledger Rows (work list, contact links)
-- Full-width grid rows divided by 1px line rules: a rust mono index or label, a TrashHand or DM Sans title, a muted mono type, then an arrow. Hover turns the title forest over 160ms. Rows are about 80–91px tall.
+### Step Panel (signature component)
+- A **readout bar** of bordered mono cells: a rust "Latest step" cell with a white dot, then project, then year / discipline.
+- A **numeral column** with the "Step" label and the giant rust numeral.
+- A **photo frame** at 16:9 with leader-line callouts and a caption strip ("Photo from step NN" when the photo comes from an earlier step).
+- A **side column** with the bold title, the Parts box (chips), the Takeaway box (rust PENDING stamp when unset), and the "Open the notebook" dark button linking to that step.
+- `manual.js` fills it from the newest entry in `notebook.html`, and the static markup is the fallback.
 
-### Featured Card
-- A white panel split 1.1fr / 0.9fr: a 390px cover photo on one side, 44px of padded copy on the other (rust mono kicker, TrashHand title, muted summary, text link). There's no border or shadow; the white against paper does the lifting.
+### Callouts
+- A 14px rust dot with a 3px white ring, a 2px white leader line (with an ink keyline), and a boxed white mono label with a 2px ink border. They're positioned with `--x`, `--y` and `--len`, and `data-mobile="hide"` drops a callout on phones. On load the leader lines draw out once over 520ms, staggered. Labels are visible from the first frame.
 
-### Subject Band
-- A full-bleed deep forest strip, 72px high, with ink rules above and below. White DM Sans 500 subject words are separated by soft mist slashes. It becomes a two-column grid on mobile.
+### Boxes / Fields
+- A 1px ink border with a forest mono header strip (an ink strip for Takeaway) and 10–12px body padding. They're used for Parts, Question / Test / Takeaway, project facts, and the anatomy diagram.
 
-### Notebook Entry (signature component)
-This is the gold-standard pattern students imitate. Its structure is fixed.
-- **Rail:** Rust uppercase mono project label, with the year / discipline in muted mono beneath it.
-- **Body:** A TrashHand title (2.7rem), a muted lead paragraph, the week's narrative, then a three-up **Question / Test / Takeaway** grid. Each heading is forest mono 500 uppercase, and each body is soft-graphite 0.9rem.
-- **Gallery:** Two-up 4:3 media (images or video) with 1px line borders on a sage backdrop and small muted captions. A single image sits at 72% width.
-- **Source link:** A forest text link with a rust underline ("Source: … ↗").
-- Entries are separated by a 1px line top border with 38px of vertical padding.
+### Notebook Step
+- `<article class="notebook-entry">`, unchanged for hand editing. JS adds `id` (`step-<project>-NN`), the numeral, `is-latest`, edge codes on figures, and the PENDING stamp. There's an optional `<ul class="entry-parts">` and an optional `figure[data-lead]` with callouts. Step-through keys are J / K.
 
-### Stamps
-- **Figure stamp:** A 94px rust blob with white uppercase mono text, rotated 9°, overlapping the hero photo's lower-right edge.
-- **Field Notes mark:** A 104px outlined ink blob with forest TrashHand text, rotated −8°, leading the notebook callout band.
-
-### Project Facts
-- A three-up `dl` grid. Each item is headed by a 2px forest top rule, with a muted uppercase mono `dt` and a 0.92rem `dd`.
+### Contents List (selected work)
+- Entry 01 is a contents entry with a 4:3 figure plate in a 2px ink border. Entries 02–03 are contents rows: rust index, bold title, a dotted forest leader, the mono type, and ↗.
 
 ### Footer
-- An ink band, 100px high. On the left is the TrashHand "Peter Builds" wordmark plus a mono tagline in fog. The center email link is white with a rust underline. On the right is a mono location and year.
+- An ink band with the TrashHand wordmark, the mono tagline in fog, the email with a rust underline, and the mono location and year.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every surface square-cornered with 1px rules. Rounding is reserved for the stamp blob and the status dot.
-- **Do** use deep forest for emphasis and state (hover, active, the band, note headings), and rust for marks (labels, underlines, stamps).
-- **Do** set every headline in TrashHand 400, and every label, date, index, and caption in IBM Plex Mono.
-- **Do** lift surfaces with tone (paper → white → sage), not shadows.
-- **Do** follow the Notebook Entry structure exactly for new entries: rail label, title, lead, narrative, Question / Test / Takeaway, gallery, source link.
-- **Do** show real build photography with 1px line borders and mono captions.
-- **Do** keep hover motion to a 2px lift or a color shift at 160–180ms, and honor `prefers-reduced-motion`.
+- **Do** treat each notebook entry as a numbered step, and let the script number it. Never hand-number.
+- **Do** keep the print run to ink plus forest on white, with rust marking only the step in focus.
+- **Do** set step numerals and short headlines in TrashHand, and long titles and all reading text in Atkinson Hyperlegible Next.
+- **Do** box and label fields with forest header strips, and use an ink strip for Takeaway.
+- **Do** annotate lead photos with leader-line callouts that name real parts, placed where the part actually is.
+- **Do** keep readout labels at 12px or larger, in Martian Mono at width 87.5.
+- **Do** honor `prefers-reduced-motion`; the only motion is the callout lines drawing in once.
 
 ### Don't:
-- **Don't** add box-shadows, glows, or gradients. The system is flat.
-- **Don't** round buttons, cards, or images.
-- **Don't** use TrashHand for body copy, buttons, or labels, and don't bold it.
-- **Don't** swap the accent jobs (rust hovers, forest metadata), and don't let either accent flood a view.
-- **Don't** rewrite, trim, or reorder Peter's handwritten copy while restyling. The design serves the words.
+- **Don't** set long titles or pull quotes in TrashHand.
+- **Don't** add shadows to lift panels or cards.
+- **Don't** round corners on buttons, panels, frames, or chips.
+- **Don't** use rust as a decorative third color, or show two rust numerals at once.
+- **Don't** rewrite, trim, or reorder Peter's handwritten copy. Only short labels with his approval.
 - **Don't** apply this system to the Magis et Ingenium Guild pages. They keep their own look for now.

@@ -7,8 +7,9 @@
     <title>Engineering Notebook | Peter Builds</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="manual.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -25,12 +26,20 @@
                 <p class="eyebrow"><span class="eyebrow-dot"></span> Engineering notebook / Field notes</p>
                 <h1>Track what you do. Good or bad.</h1>
                 <p>Just writing down every decision that you do will help build a better thought process. The first entries are drawn from my 2024 Fab Academy work; newer notes will build on the same practice.</p>
+                <nav class="step-index" aria-label="Steps by project"></nav>
+                <p class="key-hint" hidden>Press <kbd>J</kbd> / <kbd>K</kbd> to step through the notebook.</p>
             </div>
         </section>
         <section class="notebook-list page-width">
 
 
        <!-- This is a single notebook entry - copy paste until the next comment to keep the track going -->
+       <!-- Step numbers are automatic: the newest entry goes at the top and each project counts its own steps.
+            Optional: a <ul class="entry-parts"> list under the lead paragraph shows the parts used.
+            Optional: add data-lead to one figure to make it the home page photo, and add callouts on it:
+            <figure data-lead><div class="frame-media"><img ...><ul class="callouts">
+              <li style="--x:50%;--y:40%"><span>LED ring</span></li></ul></div><figcaption>...</figcaption></figure>
+            --x / --y are where the dot sits on the photo; data-side="left" puts the label on the left. -->
             <!-- ENTRY W/O 11/16-->
             <article class="notebook-entry">
                 <div class="entry-meta">Initiative Tracker <span>2026 / Electronics/ CAD</span></div>
@@ -40,6 +49,7 @@
                         I will work on perfboard first to see what I can minimize the dimensions for. It is Wednesday and I have not worked on much of this project. So I have to decide what is the correct level of work to do for the week to make the workload make sense. 
                         Should school not be closed tomorrow I will solder the battery onto one XIAO using the cables I bought for the project.
                     </p>
+                    <ul class="entry-parts"><li>XIAO</li><li>Battery</li><li>Perfboard</li></ul>
                     <div class="entry-notes">
                         <div><h3>Question</h3><p>How do I solder a battery onto the bottom of a XIAO? How do I layer the different sections of the CAD model? How do I put together a perfboard model for the circuit properly?</p></div>
                         <div><h3>Test</h3><p>Test battery charging and discharging for 3 hours. Ideal dimensions for the player box units. Test perfboard lead design.</p></div>
@@ -66,8 +76,9 @@
                         Then following I will be working on one battery unit and letting it drain. Then hopefully working on all of the other units one at a time. 
                         In trying to do a quick solder for the battery units I noticed I have to use solder paste instead of regular solder for this to make the work easier. Almost seared a board... and in that process didnt even get a good solder joint. Quite annoying. 
                         I will just be doing the code for the final two units now to make this process easier and see if when powered by USB if we can get all the systems working fully. It shouldn't be an issue. 
-                        The last thing that I did with this was have five units set up. All of them are working and the new LED Ring worked as well with an animation. I am switching unit 5 back to a true unit with the full ring. 
+                        The last thing that I did with this was have five units set up. All of them are working and the new LED Ring worked as well with an animation. I am switching unit 5 back to a true unit with the full ring.
                     </p>
+                    <ul class="entry-parts"><li>ESP32c3 × 5</li><li>LED ring</li><li>Kailh switch</li><li>Hot swap socket</li><li>Battery</li><li>Solder paste</li></ul>
                     <div class="entry-notes">
                         <div><h3>Question</h3><p>How can I make all five ESP32c3 units talk to each other? How do batteries work in this setup? How do I solder to pads on the bottom of the Xiao?</p></div>
                         <div><h3>Test</h3><p>Finish setting up the last two ESP32c3 units, the rings, the kailh switches on a hot swap. Connect one battery and have the unit power off of that and drain fully. Connect all units. Start figuring out the physical structure of system.</p></div>
@@ -77,10 +88,10 @@
                         
                         <figure><img src="assets/notebook images/entryNov1326end/Initiative Tracking app hosted on ESP32.png" alt="Initiative Tracker Hosted on ESP32 app" loading="lazy"><figcaption>Initiative Tracker Hosted on ESP32 app</figcaption></figure>
                         <figure><img src="assets/notebook images/entryNov1326end/SmallLEDUnit.JPG" alt="This was the 7LED tester for the other unit"  loading="lazy"><figcaption>This was the 7LED tester for the other unit</figcaption></figure>
-                        <figure><img src="assets/notebook images/entryNov1326end/FiveUnitP.JPG" alt="Image of all five units working in the system"  loading="lazy"><figcaption>Image of all five units working in the system</figcaption></figure>
+                        <figure data-lead><div class="frame-media"><img src="assets/notebook images/entryNov1326end/FiveUnitP.JPG" alt="Image of all five units working in the system"  loading="lazy"><ul class="callouts" aria-label="Parts in this photo"><li style="--x:18%;--y:62%;--len:28px;--i:0" data-mobile="hide"><span>Screen</span></li><li style="--x:51%;--y:21%;--len:36px;--i:1"><span>Kailh switch</span></li><li style="--x:39%;--y:31%;--len:30px;--i:2" data-mobile="hide"><span>LED ring</span></li><li style="--x:75%;--y:58%;--len:26px;--i:3" data-side="left"><span>XIAO ESP32c3</span></li></ul></div><figcaption>Image of all five units working in the system</figcaption></figure>
                         <figure>
                             <video controls preload="metadata" aria-label="active test for five units working">
-                                <source src="assets/notebook images/entryNov1326end/FIVE UNIT ACTIVE.mp4" type="video/mp4">
+                                <source src="assets/notebook images/entryNov1326end/FIVE UNIT ACTIVE.mp4#t=0.5" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <figcaption>active test for five units working</figcaption>
@@ -103,8 +114,9 @@
                     <h2>Incremental work is necessary</h2>
                     <p class="entry-lead">Setting up an initiative tracker for my dungeons and dragons table will help me get a better flowing table. To do this I had to create a coordinator unit followed by player units incrementally one by one. Using Chat to help me code the program as IoT is not my specialty I built one main unit that uses a screen with four buttons. 
                         This and a good LED ring and a kailh box jade switch as a tactile turn pusher. Then the player units were a pared down version of this with only the switcha and the LED ring.
-                        This week I did not get to four full units only 3. I am currently working on each of the final two units and will be working on battery connectivity for the rest of the work. 
+                        This week I did not get to four full units only 3. I am currently working on each of the final two units and will be working on battery connectivity for the rest of the work.
                     </p>
+                    <ul class="entry-parts"><li>ESP32c3</li><li>Screen</li><li>Four buttons</li><li>LED ring</li><li>Kailh Box Jade switch</li></ul>
                     <div class="entry-notes">
                         <div><h3>Question</h3><p>How can I get separate ESP32c3 units speaking to each other on WiFi? How can I get a keyboard switch to act as a tactile command input?</p></div>
                         <div><h3>Test</h3><p>Get the switch to do a feedback loop. Get two units to communicate. Then three, then four, then more.</p></div>
@@ -126,6 +138,7 @@
                 <div>
                     <h2>Make a failure visible</h2>
                     <p class="entry-lead">After eight board iterations, status LEDs became one of the most useful debugging tools in the system. They made it easier to tell whether a subsystem was running before reaching for another instrument.</p>
+                    <ul class="entry-parts"><li>Control board</li><li>Status LEDs</li></ul>
                     <div class="entry-notes">
                         <div><h3>Question</h3><p>How can I tell what the circuit is doing while the full robot is assembled?</p></div>
                         <div><h3>Test</h3><p>Use visible indicators while checking connections and running separate code loops.</p></div>
@@ -143,6 +156,7 @@
                 <div>
                     <h2>A bowtie for the laser cutter</h2>
                     <p class="entry-lead">The 3D-printed bowtie was not giving the finish I wanted, so I moved the decorative part to the laser cutter and kept a printed adaptor for the servo. That split made the bowtie easy to swap.</p>
+                    <ul class="entry-parts"><li>Blue acrylic</li><li>Walnut</li><li>Printed adaptor</li><li>Servo</li></ul>
                     <div class="entry-notes">
                         <div><h3>Change</h3><p>Separate the visible part from the mechanism that attaches it to the robot.</p></div>
                         <div><h3>Result</h3><p>Laser-cut versions in blue acrylic and walnut fit the same printed adaptor.</p></div>
@@ -159,6 +173,7 @@
                 <div>
                     <h2>Scope down, keep the interaction</h2>
                     <p class="entry-lead">A fully mobile robot and spoken interaction were part of the original ambition. The integration work made clear that a stable desktop build with a moving head and responsive face was a better target for the time available.</p>
+                    <ul class="entry-parts"><li>Head</li><li>Screen</li><li>Sensor</li><li>Motor</li><li>Servo</li></ul>
                     <div class="entry-notes">
                         <div><h3>Constraint</h3><p>Many subsystems still needed to work together in a short build window.</p></div>
                         <div><h3>Decision</h3><p>Defer roaming and speech; focus on the head, screen, sensor, motor, and servo.</p></div>

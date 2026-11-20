@@ -1,40 +1,217 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T12:00:00Z",
+  "generatedAt": "2026-11-20T16:00:00Z",
   "title": "Design System: Peter Builds",
   "extensions": {
     "colorMeta": {
-      "forest": { "role": "primary", "displayName": "Deep Forest", "canonical": "#1d4530", "tonalRamp": ["#1d3026", "#2d533f", "#3b7858", "#49a775", "#74be97", "#a2ceb6", "#cce1d6", "#f0f5f2"] },
-      "rust": { "role": "secondary", "displayName": "Workbench Rust", "canonical": "#b5432e", "tonalRamp": ["#341d18", "#5b2d24", "#863b2d", "#bd4833", "#cf7463", "#d8a197", "#e5ccc7", "#f6f0ee"] },
-      "ink": { "role": "neutral", "displayName": "Shop Ink", "canonical": "#171a17", "tonalRamp": ["#252825", "#3d433d", "#555e55", "#717f71", "#939f93", "#b4bbb4", "#d5d8d5", "#f2f3f2"] },
-      "paper": { "role": "neutral", "displayName": "Notebook Paper", "canonical": "#f7f7f4", "tonalRamp": ["#2a2a23", "#474738", "#65654d", "#8a8a66", "#a7a78b", "#c0c0af", "#dadad2", "#f3f3f1"] },
-      "white": { "role": "neutral", "displayName": "Clean Sheet", "canonical": "#ffffff" },
-      "sage": { "role": "neutral", "displayName": "Sage Wash", "canonical": "#e8eee7", "tonalRamp": ["#232a22", "#3a4838", "#50664d", "#6a8c64", "#8ea88a", "#b1c1ae", "#d3dbd2", "#f1f3f1"] },
-      "muted": { "role": "neutral", "displayName": "Pencil Gray", "canonical": "#5d645e", "tonalRamp": ["#252726", "#3e413f", "#575c57", "#747c75", "#969c97", "#b6bab6", "#d5d7d6", "#f2f2f2"] },
-      "line": { "role": "neutral", "displayName": "Ruled Line", "canonical": "#d5d8d2", "tonalRamp": ["#262825", "#40433c", "#595f54", "#788070", "#999f93", "#b8bbb4", "#d6d8d4", "#f2f3f2"] },
-      "body-soft": { "role": "neutral", "displayName": "Soft Graphite", "canonical": "#46514b" },
-      "on-ink-muted": { "role": "neutral", "displayName": "Footer Fog", "canonical": "#c3cbc4" },
-      "on-forest-soft": { "role": "neutral", "displayName": "Band Mist", "canonical": "#d9e3d6" }
+      "stock": {
+        "role": "neutral",
+        "displayName": "Manual Stock",
+        "canonical": "#ffffff"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Shop Ink",
+        "canonical": "#171a17",
+        "tonalRamp": [
+          "#252825",
+          "#3d433d",
+          "#555e55",
+          "#717f71",
+          "#939f93",
+          "#b4bbb4",
+          "#d5d8d5",
+          "#f2f3f2"
+        ]
+      },
+      "forest": {
+        "role": "primary",
+        "displayName": "Deep Forest",
+        "canonical": "#1d4530",
+        "tonalRamp": [
+          "#1d3026",
+          "#2d533f",
+          "#3b7858",
+          "#49a775",
+          "#74be97",
+          "#a2ceb6",
+          "#cce1d6",
+          "#f0f5f2"
+        ]
+      },
+      "forest-deep": {
+        "role": "primary",
+        "displayName": "Forest Deep",
+        "canonical": "#12301f",
+        "tonalRamp": [
+          "#1c3125",
+          "#2b553d",
+          "#377b55",
+          "#43ad71",
+          "#70c293",
+          "#9fd0b4",
+          "#cbe2d5",
+          "#eff5f2"
+        ]
+      },
+      "forest-screen": {
+        "role": "neutral",
+        "displayName": "Forest Screen",
+        "canonical": "#e7eee9",
+        "tonalRamp": [
+          "#222a25",
+          "#38483c",
+          "#4d6654",
+          "#648c6f",
+          "#8aa892",
+          "#aec1b4",
+          "#d2dbd4",
+          "#f1f3f2"
+        ]
+      },
+      "forest-hair": {
+        "role": "neutral",
+        "displayName": "Forest Hair",
+        "canonical": "#a9bcb0",
+        "tonalRamp": [
+          "#232925",
+          "#3a453e",
+          "#506357",
+          "#698674",
+          "#8ea496",
+          "#b1beb6",
+          "#d3d9d5",
+          "#f1f3f2"
+        ]
+      },
+      "rust": {
+        "role": "secondary",
+        "displayName": "Workbench Rust",
+        "canonical": "#b5432e",
+        "tonalRamp": [
+          "#341d18",
+          "#5b2d24",
+          "#863b2d",
+          "#bd4833",
+          "#cf7463",
+          "#d8a197",
+          "#e5ccc7",
+          "#f6f0ee"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Pencil Gray",
+        "canonical": "#4f5751",
+        "tonalRamp": [
+          "#252726",
+          "#3e423f",
+          "#565d57",
+          "#727d75",
+          "#959d97",
+          "#b5bab6",
+          "#d5d7d6",
+          "#f2f3f2"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#cdd3ce",
+        "tonalRamp": [
+          "#252825",
+          "#3d433e",
+          "#545e56",
+          "#707f73",
+          "#939f95",
+          "#b4bbb5",
+          "#d5d8d5",
+          "#f2f3f2"
+        ]
+      },
+      "on-ink-muted": {
+        "role": "neutral",
+        "displayName": "Footer Fog",
+        "canonical": "#c3cbc4",
+        "tonalRamp": [
+          "#252825",
+          "#3c433d",
+          "#545f55",
+          "#708072",
+          "#939f94",
+          "#b4bbb5",
+          "#d4d8d5",
+          "#f2f3f2"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Home hero headline only." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles and page h1s." },
-      "title": { "displayName": "Title", "purpose": "Notebook entry and featured project titles." },
-      "body": { "displayName": "Body", "purpose": "All running copy, measure capped near 700px." },
-      "body-strong": { "displayName": "Body Strong", "purpose": "Nav, buttons, text links, contact values." },
-      "label": { "displayName": "Label", "purpose": "Real metadata: dates, indices, field names, captions." },
-      "quote": { "displayName": "Quote", "purpose": "About page pull-quote aside only." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home cover line."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Step numbers only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Short section and page titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Long titles in bold Atkinson."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text."
+      },
+      "body-strong": {
+        "displayName": "Body Strong",
+        "purpose": "Nav, buttons, links, chips."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Readouts, box headers, edge codes, captions."
+      }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "callout-dot",
+        "value": "0 1px 3px rgba(23,26,23,0.45)",
+        "purpose": "Keeps callout dots legible on busy photos; the only shadow in the system."
+      }
+    ],
     "motion": [
-      { "name": "hover-quick", "value": "160ms ease", "purpose": "Button background/color/lift and row title color shifts." },
-      { "name": "nav-draw", "value": "transform 180ms ease, scaleX from left", "purpose": "Rust underline drawing in under nav links." },
-      { "name": "enter", "value": "500–650ms ease, translateY(12px) + opacity", "purpose": "One-time load fade-up of hero copy and figure." },
-      { "name": "lift", "value": "translateY(-2px)", "purpose": "Button hover rise." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Button lift and callout line draw."
+      },
+      {
+        "name": "callout-draw",
+        "value": "520ms, 120ms + i*90ms stagger, scaleX 0.15→1",
+        "purpose": "Leader lines draw once on the home step panel; labels visible from first frame."
+      },
+      {
+        "name": "hover",
+        "value": "160ms ease",
+        "purpose": "Color and border state changes."
+      }
     ],
     "breakpoints": [
-      { "name": "tablet", "value": "900px" },
-      { "name": "phone", "value": "620px" }
+      {
+        "name": "wide",
+        "value": "1080px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "620px"
+      }
     ]
   },
   "components": [
@@ -42,100 +219,120 @@
       "name": "Dark Button",
       "kind": "button",
       "refersTo": "button-dark",
-      "description": "Primary action: square ink button that turns forest and rises on hover.",
-      "html": "<a class=\"ds-btn ds-btn-dark\" href=\"#\">Explore the work <span>↗</span></a>",
-      "css": ".ds-btn { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0.7rem 1.05rem; border: 1px solid var(--ink, #171a17); border-radius: 0; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background 160ms ease, color 160ms ease, transform 160ms ease; } .ds-btn span { margin-left: 0.25rem; } .ds-btn-dark { background: var(--ink, #171a17); color: #fff; } .ds-btn-dark:hover { background: var(--forest, #1d4530); border-color: var(--forest, #1d4530); transform: translateY(-2px); } .ds-btn:focus-visible { outline: 3px solid var(--forest, #1d4530); outline-offset: 4px; }"
+      "description": "Primary action: square ink button, forest and a 2px lift on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Open the notebook <span>↗</span></a>",
+      "css": ".ds-btn { display:inline-flex; min-height:48px; align-items:center; padding:0.7rem 1.1rem; border:2px solid var(--ink,#171a17); background:var(--ink,#171a17); color:#fff; font-family:'Atkinson Hyperlegible Next', sans-serif; font-size:0.95rem; font-weight:700; text-decoration:none; transition:background 160ms ease, transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn span { margin-left:0.2rem; } .ds-btn:hover { background:var(--forest,#1d4530); border-color:var(--forest,#1d4530); transform:translateY(-2px); } .ds-btn:focus-visible { outline:3px solid var(--rust,#b5432e); outline-offset:3px; }"
     },
     {
       "name": "Outline Button",
       "kind": "button",
       "refersTo": "button-outline",
-      "description": "Secondary action: transparent with ink outline, sage fill on hover.",
+      "description": "Secondary action: white with a 2px ink border, forest screen on hover.",
       "html": "<a class=\"ds-btn-o\" href=\"#\">Open the notebook <span>↗</span></a>",
-      "css": ".ds-btn-o { display: inline-flex; min-height: 48px; align-items: center; padding: 0.7rem 1.05rem; border: 1px solid var(--ink, #171a17); background: transparent; color: var(--ink, #171a17); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background 160ms ease, transform 160ms ease; } .ds-btn-o span { margin-left: 0.25rem; } .ds-btn-o:hover { background: var(--sage, #e8eee7); transform: translateY(-2px); } .ds-btn-o:focus-visible { outline: 3px solid var(--forest, #1d4530); outline-offset: 4px; }"
-    },
-    {
-      "name": "Text Link",
-      "kind": "custom",
-      "refersTo": "text-link",
-      "description": "Inline action with a rust underline; turns forest on hover.",
-      "html": "<a class=\"ds-tlink\" href=\"#\">A little about me</a>",
-      "css": ".ds-tlink { color: var(--ink, #171a17); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration-color: var(--rust, #b5432e); text-decoration-thickness: 1px; text-underline-offset: 5px; } .ds-tlink:hover { color: var(--forest, #1d4530); } .ds-tlink:focus-visible { outline: 3px solid var(--forest, #1d4530); outline-offset: 4px; }"
+      "css": ".ds-btn-o { display:inline-flex; min-height:48px; align-items:center; padding:0.7rem 1.1rem; border:2px solid var(--ink,#171a17); background:#fff; color:var(--ink,#171a17); font-family:'Atkinson Hyperlegible Next', sans-serif; font-size:0.95rem; font-weight:700; text-decoration:none; transition:background 160ms ease, transform 160ms ease; } .ds-btn-o span { margin-left:0.2rem; } .ds-btn-o:hover { background:var(--forest-screen,#e7eee9); transform:translateY(-2px); } .ds-btn-o:focus-visible { outline:3px solid var(--rust,#b5432e); outline-offset:3px; }"
     },
     {
       "name": "Site Navigation",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Centered links with a rust bar that draws in on hover and current page.",
+      "refersTo": "nav-link-current",
+      "description": "Tabs on a 2px ink rule; current page is a solid ink tab.",
       "html": "<nav class=\"ds-nav\"><a href=\"#\">Work</a><a href=\"#\" aria-current=\"page\">Notebook</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
-      "css": ".ds-nav { display: flex; gap: 32px; padding: 20px; background: #fff; border-bottom: 1px solid var(--line, #d5d8d2); } .ds-nav a { position: relative; padding-block: 0.5rem; color: var(--ink, #171a17); font-family: 'DM Sans', sans-serif; font-size: 0.91rem; font-weight: 600; text-decoration: none; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--rust, #b5432e); transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; } .ds-nav a:hover::after, .ds-nav a[aria-current=\"page\"]::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 3px solid var(--forest, #1d4530); outline-offset: 4px; }"
+      "css": ".ds-nav { display:flex; gap:4px; padding:14px 20px; border-bottom:2px solid var(--ink,#171a17); background:#fff; } .ds-nav a { padding:0.45rem 0.85rem; border:1px solid transparent; color:var(--ink,#171a17); font-family:'Atkinson Hyperlegible Next', sans-serif; font-size:0.95rem; font-weight:700; text-decoration:none; } .ds-nav a:hover { border-color:var(--ink,#171a17); } .ds-nav a[aria-current=\"page\"] { background:var(--ink,#171a17); color:#fff; } .ds-nav a:focus-visible { outline:3px solid var(--rust,#b5432e); outline-offset:3px; }"
     },
     {
-      "name": "Ledger Row",
+      "name": "Readout Bar",
+      "kind": "custom",
+      "refersTo": "readout-focus",
+      "description": "Bordered mono cells; rust cell marks the step in focus.",
+      "html": "<p class=\"ds-readout\"><span class=\"is-focus\">Latest step</span><span>Initiative Tracker</span><span>2026 / Electronics</span></p>",
+      "css": ".ds-readout { display:flex; flex-wrap:wrap; margin:0; border:2px solid var(--ink,#171a17); font-family:'Martian Mono', monospace; font-variation-settings:'wdth' 87.5; font-size:0.75rem; text-transform:uppercase; } .ds-readout span { padding:9px 14px; border-right:1px solid var(--ink,#171a17); } .ds-readout span:last-child { border-right:0; } .ds-readout .is-focus { display:inline-flex; align-items:center; gap:8px; background:var(--rust,#b5432e); color:#fff; } .ds-readout .is-focus::before { content:''; width:8px; height:8px; border-radius:50%; background:#fff; }"
+    },
+    {
+      "name": "Field Box",
+      "kind": "card",
+      "refersTo": "box-header",
+      "description": "Ruled field with forest mono header strip; Takeaway uses ink.",
+      "html": "<div class=\"ds-box\"><h3>Parts</h3><ul><li>XIAO</li><li>Battery</li><li>Perfboard</li></ul></div><div class=\"ds-box ds-take\"><h3>Takeaway</h3><p><span class=\"ds-pending\">PENDING</span></p></div>",
+      "css": ".ds-box { margin-bottom:16px; border:1px solid var(--ink,#171a17); font-family:'Atkinson Hyperlegible Next', sans-serif; } .ds-box h3 { margin:0; padding:6px 10px; background:var(--forest,#1d4530); color:#fff; font-family:'Martian Mono', monospace; font-variation-settings:'wdth' 87.5; font-size:0.75rem; font-weight:500; text-transform:uppercase; } .ds-take h3 { background:var(--ink,#171a17); } .ds-box ul { display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:10px 12px; list-style:none; } .ds-box li { padding:3px 8px; background:var(--forest-screen,#e7eee9); font-size:0.9rem; font-weight:700; } .ds-box p { margin:0; padding:10px 12px; font-weight:700; } .ds-pending { display:inline-block; padding:2px 8px; border:2px solid var(--rust,#b5432e); color:var(--rust,#b5432e); font-family:'Martian Mono', monospace; font-size:0.85rem; letter-spacing:0.08em; }"
+    },
+    {
+      "name": "Photo Callout",
+      "kind": "custom",
+      "refersTo": "callout-label",
+      "description": "Rust dot, white leader line, boxed mono label naming a real part.",
+      "html": "<div class=\"ds-frame\"><span class=\"ds-callout\" style=\"--x:30%;--y:50%\"><span>LED ring</span></span></div>",
+      "css": ".ds-frame { position:relative; width:320px; aspect-ratio:16/9; background:#6b5a46; border:2px solid var(--ink,#171a17); } .ds-callout { position:absolute; left:var(--x); top:var(--y); } .ds-callout::before { content:''; position:absolute; left:-7px; top:-7px; width:14px; height:14px; border:3px solid #fff; border-radius:50%; background:var(--rust,#b5432e); box-shadow:0 1px 3px rgba(23,26,23,.45); box-sizing:border-box; } .ds-callout::after { content:''; position:absolute; top:-1px; left:7px; width:36px; height:2px; background:#fff; } .ds-callout span { position:absolute; top:-15px; left:43px; padding:5px 8px; border:2px solid var(--ink,#171a17); background:#fff; font-family:'Martian Mono', monospace; font-variation-settings:'wdth' 87.5; font-size:0.75rem; text-transform:uppercase; white-space:nowrap; }"
+    },
+    {
+      "name": "Step Numeral",
+      "kind": "custom",
+      "refersTo": "numeral",
+      "description": "Giant hand-lettered step number; rust only for the step in focus.",
+      "html": "<div class=\"ds-step\"><span>Step</span><p>03</p></div>",
+      "css": ".ds-step { display:inline-flex; flex-direction:column; gap:10px; padding:16px; border:2px solid var(--ink,#171a17); } .ds-step span { font-family:'Martian Mono', monospace; font-size:0.75rem; text-transform:uppercase; color:var(--muted,#4f5751); } .ds-step p { margin:0; font-family:'TrashHand', 'Comic Sans MS', cursive; font-size:7rem; line-height:0.8; color:var(--rust,#b5432e); }"
+    },
+    {
+      "name": "Contents Row",
       "kind": "custom",
       "refersTo": "work-row",
-      "description": "Ruled list row: rust index, hand-lettered title, mono type, arrow.",
-      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-n\">02</span><span class=\"ds-row-t\">From two printers to a 9,000 sq. ft. innovation center</span><span class=\"ds-row-k\">Program building</span><span class=\"ds-row-a\">↗</span></a>",
-      "css": ".ds-row { display: grid; grid-template-columns: 58px 1fr minmax(160px, 0.4fr) 24px; align-items: center; gap: 18px; min-height: 91px; border-top: 1px solid var(--line, #d5d8d2); border-bottom: 1px solid var(--line, #d5d8d2); color: var(--ink, #171a17); text-decoration: none; } .ds-row-n, .ds-row-k { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; } .ds-row-n { color: var(--rust, #b5432e); } .ds-row-k { color: var(--muted, #5d645e); } .ds-row-t { font-family: 'TrashHand', 'Comic Sans MS', cursive; font-size: 1.8rem; transition: color 160ms ease; } .ds-row-a { color: var(--forest, #1d4530); } .ds-row:hover .ds-row-t { color: var(--forest, #1d4530); }"
-    },
-    {
-      "name": "Notebook Entry",
-      "kind": "card",
-      "refersTo": "notebook-entry",
-      "description": "Signature gold-standard entry: meta rail, hand-lettered title, lead, Question / Test / Takeaway.",
-      "html": "<article class=\"ds-entry\"><p class=\"ds-entry-meta\">Initiative Tracker<span>2026 / Electronics</span></p><div><h2>Incremental work is necessary</h2><p class=\"ds-entry-lead\">One unit at a time, then the next.</p><div class=\"ds-entry-notes\"><div><h3>Question</h3><p>How can I get separate units talking?</p></div><div><h3>Test</h3><p>Two units first, then three.</p></div><div><h3>Takeaway</h3><p>Pending</p></div></div></div></article>",
-      "css": ".ds-entry { display: grid; grid-template-columns: 190px 1fr; gap: 42px; padding-block: 38px; border-top: 1px solid var(--line, #d5d8d2); font-family: 'DM Sans', sans-serif; color: var(--ink, #171a17); } .ds-entry-meta { margin: 0; color: var(--rust, #b5432e); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; } .ds-entry-meta span { display: block; margin-top: 8px; color: var(--muted, #5d645e); } .ds-entry h2 { margin: 0 0 14px; font-family: 'TrashHand', 'Comic Sans MS', cursive; font-size: 2.7rem; font-weight: 400; line-height: 1.1; } .ds-entry-lead { color: var(--muted, #5d645e); font-size: 1.05rem; margin: 0 0 22px; } .ds-entry-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; } .ds-entry-notes h3 { margin: 0 0 7px; color: var(--forest, #1d4530); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; } .ds-entry-notes p { margin: 0; color: #46514b; font-size: 0.9rem; }"
-    },
-    {
-      "name": "Figure Stamp",
-      "kind": "custom",
-      "refersTo": "figure-stamp",
-      "description": "Rotated rust blob stamp overlapping a photo edge.",
-      "html": "<div class=\"ds-stamp\">BUILT<br>BY HAND</div>",
-      "css": ".ds-stamp { display: grid; width: 94px; height: 94px; place-content: center; border-radius: 46% 54% 43% 57%; background: var(--rust, #b5432e); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; line-height: 1.5; text-align: center; transform: rotate(9deg); }"
-    },
-    {
-      "name": "Subject Band",
-      "kind": "custom",
-      "refersTo": "subject-band",
-      "description": "Full-bleed deep forest strip of practice areas separated by mist slashes.",
-      "html": "<div class=\"ds-band\"><span>Digital fabrication</span><span>Robotics &amp; embedded systems</span><span>Project-based learning</span></div>",
-      "css": ".ds-band { display: flex; min-height: 72px; align-items: center; gap: 20px; padding-inline: 24px; border-block: 1px solid var(--ink, #171a17); background: var(--forest, #1d4530); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.86rem; font-weight: 500; } .ds-band span + span::before { content: '/'; margin-right: 20px; color: #d9e3d6; }"
+      "description": "Manual contents entry: rust index, bold title, dotted leader, mono type.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"n\">02</span><span class=\"t\">From two printers to a 9,000 sq. ft. innovation center</span><span class=\"k\">Program building</span><span class=\"a\">↗</span></a>",
+      "css": ".ds-row { display:grid; grid-template-columns:56px auto minmax(24px,1fr) auto 24px; align-items:baseline; gap:12px; padding-block:20px; border-bottom:1px solid var(--ink,#171a17); color:var(--ink,#171a17); text-decoration:none; font-family:'Atkinson Hyperlegible Next', sans-serif; } .ds-row::after { content:''; grid-column:3; grid-row:1; align-self:center; border-bottom:2px dotted var(--forest-hair,#a9bcb0); } .ds-row .n { grid-column:1; color:var(--rust,#b5432e); font-family:'Martian Mono', monospace; font-size:0.85rem; } .ds-row .t { grid-column:2; font-size:1.3rem; font-weight:800; } .ds-row .k { grid-column:4; color:var(--muted,#4f5751); font-family:'Martian Mono', monospace; font-size:0.75rem; } .ds-row .a { grid-column:5; color:var(--forest,#1d4530); } .ds-row:hover .t { color:var(--forest,#1d4530); }"
     }
   ],
   "narrative": {
-    "northStar": "The Workbench Notebook",
-    "overview": "Think of an engineer's ruled notebook lying open on a wood workbench. Headlines are written by hand in TrashHand, as if marked with a fat marker. Labels look like field notes stamped in mono type. Hairline rules separate one entry from the next, like lines on graph paper. The photos show real parts on real benches: perfboard, LED rings, a laser-cut bowtie. Nothing is mocked up. The page is the notebook, so the design steps back and lets the build show through.\n\nDensity is calm and editorial: wide margins, generous vertical rhythm, and long text columns capped near 700px. Personality lives in a few deliberate spots: the handwritten display face, a rotated rust stamp, and the deep forest band. Everything else stays disciplined so the playful parts read as intentional. The site is light, paper-toned, and flat. It should feel like it could be printed, photocopied, and taped to a lab wall.",
+    "northStar": "The Build Manual",
+    "overview": "The site is an open kit instruction manual that is still being written. Every notebook entry is a numbered build step: a giant hand-lettered step numeral, a framed photo with leader-line callouts naming the real parts, a parts box, and the Question / Test / Takeaway fields a student can copy. The manual is printed in two colors on bright white stock: ink for structure, deep forest for headers and bands. Workbench Rust is held back to mark the one step in focus and its callouts. Everything is square, ruled, and labeled, the way a manual teaches a 12-year-old to build something without anyone standing over them.\n\nPersonality comes from three places only: the TrashHand step numerals and headlines, the readout labels (an instrument-panel, slightly cyberpunk voice Peter chose deliberately), and real build photography annotated like a parts diagram. Body text is set in Atkinson Hyperlegible Next, a face designed for legibility, because the readers are young and the entries are long. The page is flat. Heavy 2px ink rules and boxed panels give it its structure.",
     "keyCharacteristics": [
-      "Handwritten display headlines over a clean geometric sans body.",
-      "Mono labels for metadata: dates, project numbers, Question / Test / Takeaway.",
-      "Square corners and 1px rules throughout. The only round shapes are the organic stamp blob and the status dot.",
-      "Flat surfaces. Depth comes from tonal blocks (paper → white → sage → forest → ink), never shadows.",
-      "Two accents with fixed jobs: forest for emphasis, state, and bands; rust for labels, underlines, and stamps.",
-      "Real build photography with 1px line borders and mono captions."
+      "Two-color print on white: ink for structure, forest as the second color, rust only on the step in focus.",
+      "Steps number themselves per project (oldest = 01), so new entries are a straight copy-paste.",
+      "Giant TrashHand step numerals; long titles in bold Atkinson for legibility.",
+      "Boxed fields with forest header strips (Parts, Question, Test) and an ink strip for Takeaway.",
+      "Fixed-ratio photo frames with edge codes (S03 / F02) and leader-line part callouts.",
+      "Square corners, 2px ink rules, no shadows except the small lift under callout dots."
     ],
     "rules": [
-      { "name": "The Two Jobs Rule", "body": "Forest means \"this is the thing / this is active.\" Rust means \"this is a label or a mark.\" Don't swap them: a rust hover state or a forest metadata label breaks the grammar.", "section": "colors" },
-      { "name": "The Paper First Rule", "body": "Most of any screen is paper, white, or sage. Forest appears as one band or as small accents, and rust only as marks. If an accent covers more than a band's worth of a view, pull it back.", "section": "colors" },
-      { "name": "The Hand-Lettered Headline Rule", "body": "TrashHand is only for headlines and the footer wordmark, always at weight 400 and never bolded or italicized synthetically. Body text, buttons, and labels never use it.", "section": "typography" },
-      { "name": "The Real Metadata Rule", "body": "Mono type marks facts such as dates, numbers, field names, and captions. It is never used as decoration on prose.", "section": "typography" },
-      { "name": "The No-Shadow Rule", "body": "Surfaces never cast shadows. To lift something, change its tone (paper → white) or put an offset sage block behind it.", "section": "elevation" }
+      {
+        "name": "The Two-Color Rule",
+        "body": "Structure is ink, the second color is forest, and that is the whole print run. Rust is not a third color; it is a marker for the one thing in focus.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Focus Rule",
+        "body": "At any moment, rust marks one step: the latest on load, or the :target step when someone jumps to it. Two rust numerals on one screen means the focus has been lost.",
+        "section": "colors"
+      },
+      {
+        "name": "The Short Hand Rule",
+        "body": "TrashHand only sets numerals and short headlines (about six words or fewer). Anything a reader has to work through goes in Atkinson.",
+        "section": "typography"
+      },
+      {
+        "name": "The Readout Label Rule",
+        "body": "The mono labels (eyebrows, \"01 / …\" indices, ↗ arrows, readout cells) are a chosen signature with a slightly cyberpunk, instrument-readout feel. Keep them, make them distinctive through placement and treatment, and never set them below 12px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Boxed, Not Lifted Rule",
+        "body": "To separate something, box it and label the box. Never float it on a shadow.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do keep every surface square-cornered with 1px rules. Rounding is reserved for the stamp blob and the status dot.",
-      "Do use deep forest for emphasis and state (hover, active, the band, note headings), and rust for marks (labels, underlines, stamps).",
-      "Do set every headline in TrashHand 400, and every label, date, index, and caption in IBM Plex Mono.",
-      "Do lift surfaces with tone (paper → white → sage), not shadows.",
-      "Do follow the Notebook Entry structure exactly for new entries: rail label, title, lead, narrative, Question / Test / Takeaway, gallery, source link.",
-      "Do show real build photography with 1px line borders and mono captions.",
-      "Do keep hover motion to a 2px lift or a color shift at 160–180ms, and honor prefers-reduced-motion."
+      "Do treat each notebook entry as a numbered step, and let the script number it. Never hand-number.",
+      "Do keep the print run to ink plus forest on white, with rust marking only the step in focus.",
+      "Do set step numerals and short headlines in TrashHand, and long titles and all reading text in Atkinson Hyperlegible Next.",
+      "Do box and label fields with forest header strips, and use an ink strip for Takeaway.",
+      "Do annotate lead photos with leader-line callouts that name real parts, placed where the part actually is.",
+      "Do keep readout labels at 12px or larger, in Martian Mono at width 87.5.",
+      "Do honor prefers-reduced-motion; the only motion is the callout lines drawing in once."
     ],
     "donts": [
-      "Don't add box-shadows, glows, or gradients. The system is flat.",
-      "Don't round buttons, cards, or images.",
-      "Don't use TrashHand for body copy, buttons, or labels, and don't bold it.",
-      "Don't swap the accent jobs (rust hovers, forest metadata), and don't let either accent flood a view.",
-      "Don't rewrite, trim, or reorder Peter's handwritten copy while restyling. The design serves the words.",
+      "Don't set long titles or pull quotes in TrashHand.",
+      "Don't add shadows to lift panels or cards.",
+      "Don't round corners on buttons, panels, frames, or chips.",
+      "Don't use rust as a decorative third color, or show two rust numerals at once.",
+      "Don't rewrite, trim, or reorder Peter's handwritten copy. Only short labels with his approval.",
       "Don't apply this system to the Magis et Ingenium Guild pages. They keep their own look for now."
     ]
   }

@@ -7,8 +7,9 @@
     <title>Peter Builds | Engineering, Making, Teaching</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="manual.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -26,22 +27,64 @@
     </header>
 
     <main id="main">
-        <section class="hero page-width">
-            <div class="hero-copy">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> Engineer / Maker / Educator</p>
-                <h1>Make the idea<br><em>real.</em></h1>
-                <p class="hero-intro">I'm Peter Perez. I build robots, fabrication programs, and learning experiences that help people turn curiosity into capability.</p>
-                <div class="hero-actions">
-                    <a class="button button-dark" href="projects.html">Explore the work <span aria-hidden="true">↗</span></a>
-                    <a class="text-link" href="about.html">A little about me</a>
+        <section class="page-width cover-section" aria-labelledby="cover-title">
+            <div class="cover">
+                <div>
+                    <p class="eyebrow"><span class="eyebrow-dot"></span> Engineer / Maker / Educator</p>
+                    <h1 id="cover-title">Make the idea <em>real.</em></h1>
                 </div>
-                <p class="hero-location">Based in Miami, Florida <span aria-hidden="true">/</span> Building for curious people everywhere</p>
+                <div class="cover-side">
+                    <p class="hero-intro">I'm Peter Perez. I build robots, fabrication programs, and learning experiences that help people turn curiosity into capability.</p>
+                    <div class="hero-actions">
+                        <a class="button button-dark" href="projects.html">Explore the work <span aria-hidden="true">↗</span></a>
+                        <a class="text-link" href="about.html">A little about me</a>
+                    </div>
+                    <p class="hero-location">Based in Miami, Florida <span aria-hidden="true">/</span> Building for curious people everywhere</p>
+                </div>
             </div>
-            <figure class="hero-figure">
-                <img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Final.JPG" alt="DAPR, a layered desktop robot designed and fabricated by Peter Perez" fetchpriority="high">
-                <figcaption><span>01 / DAP-R</span> A desktop robot with room for personality.</figcaption>
-                <span class="figure-stamp" aria-hidden="true">BUILT<br>BY HAND</span>
-            </figure>
+
+            <!-- Filled from the newest entry in notebook.html by manual.js; this markup is the fallback. -->
+            <article class="step-panel" data-latest-step aria-labelledby="latest-step-title">
+                <p class="readout">
+                    <span class="is-focus">Latest step</span>
+                    <span data-field="project">Initiative Tracker</span>
+                    <span data-field="detail">2026 / Electronics/ CAD</span>
+                </p>
+                <div class="step-grid">
+                    <div class="step-number">
+                        <span class="readout-label">Step</span>
+                        <p class="numeral" data-field="step">03</p>
+                    </div>
+                    <figure class="frame">
+                        <div class="frame-media">
+                            <img src="assets/notebook images/entryNov1326end/FiveUnitP.JPG" alt="Image of all five units working in the system" fetchpriority="high">
+                            <ul class="callouts" aria-label="Parts in this photo">
+                                <li style="--x:18%;--y:62%;--len:28px;--i:0" data-mobile="hide"><span>Screen</span></li>
+                                <li style="--x:51%;--y:21%;--len:36px;--i:1"><span>Kailh switch</span></li>
+                                <li style="--x:39%;--y:31%;--len:30px;--i:2" data-mobile="hide"><span>LED ring</span></li>
+                                <li style="--x:75%;--y:58%;--len:26px;--i:3" data-side="left"><span>XIAO ESP32c3</span></li>
+                            </ul>
+                        </div>
+                        <figcaption class="frame-caption"><span data-field="caption">Image of all five units working in the system</span><b data-field="photo-step">Photo from step 02</b></figcaption>
+                    </figure>
+                    <div class="step-side">
+                        <h2 id="latest-step-title" data-field="title">Batteries for sure, CAD of the first design for the tracker, Perfboard the circuit.</h2>
+                        <div class="box">
+                            <h3>Parts</h3>
+                            <ul data-field="parts">
+                                <li>XIAO</li>
+                                <li>Battery</li>
+                                <li>Perfboard</li>
+                            </ul>
+                        </div>
+                        <div class="box box-takeaway">
+                            <h3>Takeaway</h3>
+                            <p data-field="takeaway"><span class="pending">PENDING</span></p>
+                        </div>
+                        <a class="button button-dark step-link" data-field="link" href="notebook.html">Open the notebook <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </article>
         </section>
 
         <section class="practice-band" aria-label="Areas of practice">
@@ -62,7 +105,7 @@
                 <a class="text-link" href="projects.html">All projects <span aria-hidden="true">↗</span></a>
             </div>
             <a class="featured-project" href="projects.html#dap-r">
-                <img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20v2.jpg" alt="DAPR robot prototype showing its modular body and expressive design" loading="lazy">
+                <img src="https://fabacademy.org/2024/labs/hopelab/students/peter-perez/images/final-proj/DAPR%20Final.JPG" alt="DAPR, a layered desktop robot designed and fabricated by Peter Perez" loading="lazy">
                 <div class="featured-project-copy">
                     <p class="project-kicker">01 / Personal engineering</p>
                     <h3>DAP-R: a robot with a point of view</h3>
@@ -88,13 +131,23 @@
 
         <section class="notebook-band">
             <div class="page-width notebook-callout">
-                <div class="notebook-mark" aria-hidden="true">PB<br>FIELD<br>NOTES</div>
                 <div>
                     <p class="eyebrow">The work between the milestones</p>
                     <h2>Good notes make better builds.</h2>
                     <p>Experiments, false starts, and small discoveries from the workbench. The first notes revisit the DAP-R build; the next ones will follow whatever I'm making now.</p>
+                    <a class="button button-outline" href="notebook.html">Open the notebook <span aria-hidden="true">↗</span></a>
                 </div>
-                <a class="button button-outline" href="notebook.html">Open the notebook <span aria-hidden="true">↗</span></a>
+                <div class="anatomy" aria-hidden="true">
+                    <span class="anatomy-step">03</span>
+                    <div class="anatomy-title"></div>
+                    <div class="anatomy-lead"><i></i><i></i><i></i></div>
+                    <div class="anatomy-row">
+                        <div class="anatomy-field"><b>Question</b><i></i><i></i></div>
+                        <div class="anatomy-field"><b>Test</b><i></i><i></i></div>
+                        <div class="anatomy-field is-focus"><b>Takeaway</b><i></i><i></i></div>
+                    </div>
+                    <div class="anatomy-photos"><i></i><i></i></div>
+                </div>
             </div>
         </section>
     </main>
