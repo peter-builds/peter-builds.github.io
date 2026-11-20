@@ -132,7 +132,7 @@
       "on-ink-muted": {
         "role": "neutral",
         "displayName": "Footer Fog",
-        "canonical": "#c3cbc4",
+        "canonical": "#a9bcb0",
         "tonalRamp": [
           "#252825",
           "#3c433d",
@@ -178,8 +178,8 @@
     "shadows": [
       {
         "name": "callout-dot",
-        "value": "0 1px 3px rgba(23,26,23,0.45)",
-        "purpose": "Keeps callout dots legible on busy photos; the only shadow in the system."
+        "value": "none (1px solid var(--ink) outline)",
+        "purpose": "Callout dots and leader lines use an ink outline, not a shadow, to stay legible on busy photos. The system has no shadows."
       }
     ],
     "motion": [
@@ -261,7 +261,7 @@
       "refersTo": "callout-label",
       "description": "Rust dot, white leader line, boxed mono label naming a real part.",
       "html": "<div class=\"ds-frame\"><span class=\"ds-callout\" style=\"--x:30%;--y:50%\"><span>LED ring</span></span></div>",
-      "css": ".ds-frame { position:relative; width:320px; aspect-ratio:16/9; background:#6b5a46; border:2px solid var(--ink,#171a17); } .ds-callout { position:absolute; left:var(--x); top:var(--y); } .ds-callout::before { content:''; position:absolute; left:-7px; top:-7px; width:14px; height:14px; border:3px solid #fff; border-radius:50%; background:var(--rust,#b5432e); box-shadow:0 1px 3px rgba(23,26,23,.45); box-sizing:border-box; } .ds-callout::after { content:''; position:absolute; top:-1px; left:7px; width:36px; height:2px; background:#fff; } .ds-callout span { position:absolute; top:-15px; left:43px; padding:5px 8px; border:2px solid var(--ink,#171a17); background:#fff; font-family:'Martian Mono', monospace; font-variation-settings:'wdth' 87.5; font-size:0.75rem; text-transform:uppercase; white-space:nowrap; }"
+      "css": ".ds-frame { position:relative; width:320px; aspect-ratio:16/9; background:#6b5a46; border:2px solid var(--ink,#171a17); } .ds-callout { position:absolute; left:var(--x); top:var(--y); } .ds-callout::before { content:''; position:absolute; left:-7px; top:-7px; width:14px; height:14px; border:3px solid #fff; border-radius:50%; background:var(--rust,#b5432e); outline:1px solid var(--ink,#171a17); box-sizing:border-box; } .ds-callout::after { content:''; position:absolute; top:-1px; left:7px; width:36px; height:2px; background:#fff; } .ds-callout span { position:absolute; top:-15px; left:43px; padding:5px 8px; border:2px solid var(--ink,#171a17); background:#fff; font-family:'Martian Mono', monospace; font-variation-settings:'wdth' 87.5; font-size:0.75rem; text-transform:uppercase; white-space:nowrap; }"
     },
     {
       "name": "Step Numeral",
@@ -289,7 +289,7 @@
       "Giant TrashHand step numerals; long titles in bold Atkinson for legibility.",
       "Boxed fields with forest header strips (Parts, Question, Test) and an ink strip for Takeaway.",
       "Fixed-ratio photo frames with edge codes (S03 / F02) and leader-line part callouts.",
-      "Square corners, 2px ink rules, no shadows except the small lift under callout dots."
+      "Square corners, 2px ink rules, no shadows anywhere."
     ],
     "rules": [
       {

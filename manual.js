@@ -293,6 +293,18 @@
         }
     }
 
+    /* Links that open a new tab say so to screen readers, including ones added to the notebook later. */
+    function markNewTabLinks() {
+        document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+            if (a.querySelector('.sr-only')) return;
+            var cue = document.createElement('span');
+            cue.className = 'sr-only';
+            cue.textContent = ' (opens in a new tab)';
+            a.appendChild(cue);
+        });
+    }
+
+    markNewTabLinks();
     initNotebook();
     initHome();
 })();

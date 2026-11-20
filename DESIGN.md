@@ -11,7 +11,7 @@ colors:
   rust: "#b5432e"
   muted: "#4f5751"
   hair: "#cdd3ce"
-  on-ink-muted: "#c3cbc4"
+  on-ink-muted: "#a9bcb0"
 typography:
   display:
     fontFamily: "TrashHand, 'Comic Sans MS', cursive"
@@ -135,7 +135,7 @@ Personality comes from three places only: the TrashHand step numerals and headli
 - Giant TrashHand step numerals; long titles in bold Atkinson for legibility.
 - Boxed fields with forest header strips (Parts, Question, Test) and an ink strip for Takeaway.
 - Fixed-ratio photo frames with edge codes (S03 / F02) and leader-line part callouts.
-- Square corners, 2px ink rules, no shadows except the small lift under callout dots.
+- Square corners, 2px ink rules, no shadows anywhere.
 
 ## Colors
 
@@ -195,7 +195,7 @@ Rhythm: sections have 88px of padding (60px on phones), panels 18–26px, boxes 
 
 ## Elevation & Depth
 
-The manual is flat: depth comes from boxes and rules, not shadows. 2px ink borders make panels; 1px ink borders make fields inside them; forest header strips label each field. The one exception is a small shadow (`0 1px 3px rgba(23,26,23,.45)`) under callout dots, together with a white keyline on leader lines, so the annotations read against busy photos.
+The manual is flat: depth comes from boxes and rules, not shadows. 2px ink borders make panels; 1px ink borders make fields inside them; forest header strips label each field. Callout dots and leader lines carry a 1px ink outline instead of a shadow, so the annotations read against busy photos without breaking the flat rule.
 
 ### Named Rules
 **The Boxed, Not Lifted Rule.** To separate something, box it and label the box. Never float it on a shadow.

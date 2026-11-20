@@ -72,6 +72,9 @@ p { text-wrap: pretty; }
     letter-spacing: 0.01em;
 }
 
+/* Text for screen readers only, e.g. the new-tab cue on external links. */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+
 .skip-link {
     position: absolute;
     top: 0.5rem;
@@ -235,7 +238,7 @@ p { text-wrap: pretty; }
     border: 3px solid var(--white);
     border-radius: 50%;
     background: var(--rust);
-    box-shadow: 0 1px 3px rgba(23, 26, 23, 0.45);
+    outline: 1px solid var(--ink);
 }
 .callouts li::after {
     content: '';
@@ -245,7 +248,7 @@ p { text-wrap: pretty; }
     width: var(--len, 44px);
     height: 2px;
     background: var(--white);
-    box-shadow: 0 0 0 1px rgba(23, 26, 23, 0.35);
+    outline: 1px solid var(--ink);
     transform-origin: left center;
 }
 .callouts li span {
@@ -372,10 +375,10 @@ p { text-wrap: pretty; }
 /* ---------- Footer: back cover ---------- */
 .site-footer { background: var(--ink); color: var(--white); }
 .footer-inner { display: flex; min-height: 100px; align-items: center; justify-content: space-between; gap: 24px; }
-.footer-inner p { margin: 0; color: #c3cbc4; }
+.footer-inner p { margin: 0; color: var(--forest-hair); }
 .footer-inner a { color: var(--white); text-decoration-color: var(--rust); text-underline-offset: 4px; font-size: 0.9rem; }
 .footer-brand { font-family: var(--display); font-size: 1.6rem !important; text-decoration: none; }
-.footer-brand span { color: #c3cbc4; font-family: var(--mono); font-size: 0.75rem; font-variation-settings: 'wdth' 87.5; }
+.footer-brand span { color: var(--forest-hair); font-family: var(--mono); font-size: 0.75rem; font-variation-settings: 'wdth' 87.5; }
 
 /* ==========================================================================
    Inner pages: chapter openers
