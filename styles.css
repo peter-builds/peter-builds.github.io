@@ -518,6 +518,12 @@ p { text-wrap: pretty; }
 .entry-gallery .frame-media { aspect-ratio: auto; }
 .entry-gallery figcaption { display: flex; gap: 10px; padding: 7px 10px; border-top: 1px solid var(--ink); color: var(--muted); }
 .entry-gallery figure[data-edge] figcaption::before { content: attr(data-edge); color: var(--rust); white-space: nowrap; }
+/* A gallery file that can't be found: an empty labelled frame with the path, set by manual.js. */
+.entry-gallery figure.is-missing > img, .entry-gallery figure.is-missing > video, .entry-gallery figure.is-missing > .frame-media { display: none; }
+.media-missing { display: grid; align-content: center; justify-items: start; gap: 8px; aspect-ratio: 4 / 3; margin: 0; padding: 18px; background: var(--forest-screen); }
+.entry-gallery figure[data-lead] .media-missing { aspect-ratio: 16 / 9; }
+.media-missing b { padding: 2px 8px; border: 2px solid var(--rust); color: var(--rust); font: 600 0.75rem/1.4 var(--mono); font-variation-settings: 'wdth' 87.5; letter-spacing: 0.04em; text-transform: uppercase; }
+.media-missing code { color: var(--muted); font: 0.75rem/1.5 var(--mono); overflow-wrap: anywhere; }
 
 /* ---------- Motion: the callouts draw in once ---------- */
 @media (prefers-reduced-motion: no-preference) {

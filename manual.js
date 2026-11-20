@@ -9,7 +9,9 @@
 
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    var slug = function (s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
+    /* Strip accents so "Robótica" -> "Robotica"; falls back gracefully where normalize() is missing. */
+    var plain = function (s) { return s.normalize ? s.normalize('NFD').replace(/[̀-ͯ]/g, '') : s; };
+    var slug = function (s) { return plain(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
 
     function projectOf(article) {
         var meta = article.querySelector('.entry-meta');
@@ -22,9 +24,10 @@
         return { name: name.trim() || 'Notebook', detail: detail ? detail.textContent.trim() : '' };
     }
 
-    /* Project code from the project name: "Initiative Tracker" -> IT, "Fab Academy" -> FA, "Robot" -> RO. */
+    /* Project code from the project name: "Initiative Tracker" -> IT, "Fab Academy" -> FA, "Robot" -> RO,
+       "Robótica Básica" -> RB. Names with no Latin letters or digits fall back to NB. */
     function codeOf(name) {
-        var words = name.replace(/[^A-Za-z0-9 ]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+        var words = plain(name).replace(/[^A-Za-z0-9 ]+/g, ' ').trim().split(/\s+/).filter(Boolean);
         if (!words.length) return 'NB';
         if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
         return words.slice(0, 3).map(function (w) { return w[0]; }).join('').toUpperCase();
@@ -42,7 +45,16 @@
             info[i].label = pad(counts[key]);
             info[i].prefix = codeOf(key);
             info[i].code = info[i].prefix + '·' + info[i].label;
-            info[i].id = 'step-' + slug(key) + '-' + info[i].label;
+            info[i].id = 'step-' + (slug(key) || info[i].prefix.toLowerCase()) + '-' + info[i].label;
+        }
+        /* Two different project names can share a slug ("DAP-R" and "DAP R"): keep every id unique.
+           Oldest entries claim their id first, so links to existing steps never change. */
+        var seen = {};
+        for (var j = info.length - 1; j >= 0; j--) {
+            var id = info[j].id, n = 2;
+            while (seen[id]) id = info[j].id + '-' + n++;
+            seen[id] = true;
+            info[j].id = id;
         }
         return info;
     }
@@ -55,10 +67,47 @@
         return last ? textOf(last.querySelector('p')) : '';
     }
 
+    /* A photo or video whose file can't be found (typo in the path, or a template placeholder left in)
+       shows a labelled empty frame with the path, instead of a broken-image icon. */
+    function markMissing(fig, path) {
+        if (!fig || fig.classList.contains('is-missing')) return;
+        fig.classList.add('is-missing');
+        var note = document.createElement('p');
+        note.className = 'media-missing';
+        note.innerHTML = '<b>File not found</b><code></code>';
+        var shown = path || '(no file path)';
+        try { shown = decodeURI(shown); } catch (e) { /* keep the raw path */ }
+        note.querySelector('code').textContent = shown;
+        var media = fig.querySelector('.frame-media') || fig.querySelector('img, video');
+        if (media) media.insertAdjacentElement('afterend', note); else fig.insertBefore(note, fig.firstChild);
+    }
+
+    function guardMedia(root) {
+        root.querySelectorAll('.entry-gallery img').forEach(function (img) {
+            var fig = img.closest('figure');
+            var src = img.getAttribute('src') || '';
+            if (!src || /\/FOLDER\//.test(src)) return markMissing(fig, src);
+            img.addEventListener('error', function () { markMissing(fig, src); });
+            if (img.complete && img.naturalWidth === 0 && img.currentSrc) markMissing(fig, src);
+        });
+        root.querySelectorAll('.entry-gallery video').forEach(function (video) {
+            var fig = video.closest('figure');
+            var sources = video.querySelectorAll('source');
+            var last = sources[sources.length - 1];
+            var src = (last && last.getAttribute('src')) || video.getAttribute('src') || '';
+            if (!src || /\/FOLDER\//.test(src)) return markMissing(fig, src);
+            var miss = function () { markMissing(fig, src.split('#')[0]); };
+            (last || video).addEventListener('error', miss);
+            /* The source may already have failed before this script ran. */
+            if (video.networkState === 3) miss();
+        });
+    }
+
     /* ---------- Notebook page ---------- */
     function initNotebook() {
         var list = document.querySelector('.notebook-list');
         if (!list) return;
+        guardMedia(list);
         var steps = numberSteps(list);
         if (!steps.length) return;
 
@@ -127,7 +176,7 @@
             });
             index.innerHTML = groups.map(function (name) {
                 var items = byName[name].slice().reverse();
-                return '<section><h2><b>' + esc(name) + '</b> / ' + esc(items[0].prefix) + ' / ' + items.length + ' steps</h2><ol>' +
+                return '<section><h2><b>' + esc(name) + '</b> / ' + esc(items[0].prefix) + ' / ' + items.length + (items.length === 1 ? ' step' : ' steps') + '</h2><ol>' +
                     items.map(function (s) {
                         return '<li><a href="#' + s.id + '"' + (s.el.classList.contains('is-latest') ? ' class="is-latest"' : '') +
                             ' aria-label="' + esc(name + ' step ' + s.label + ': ' + textOf(s.el.querySelector('h2'))) + '">' + s.label + '</a></li>';
@@ -214,6 +263,14 @@
                     var target = frame.querySelector('img');
                     var src = img.getAttribute('src');
                     if (target.getAttribute('src') !== src) {
+                        /* If the notebook's photo path is wrong, put the built-in photo back
+                           rather than showing a broken image on the home page. */
+                        var fallback = { src: target.getAttribute('src'), alt: target.getAttribute('alt') };
+                        target.addEventListener('error', function revert() {
+                            target.removeEventListener('error', revert);
+                            target.setAttribute('src', fallback.src);
+                            target.setAttribute('alt', fallback.alt);
+                        });
                         target.setAttribute('src', src);
                         target.setAttribute('alt', img.getAttribute('alt') || '');
                     }
