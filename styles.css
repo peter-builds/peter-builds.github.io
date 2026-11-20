@@ -376,7 +376,7 @@ p { text-wrap: pretty; }
 .site-footer { background: var(--ink); color: var(--white); }
 .footer-inner { display: flex; min-height: 100px; align-items: center; justify-content: space-between; gap: 24px; }
 .footer-inner p { margin: 0; color: var(--forest-hair); }
-.footer-inner a { color: var(--white); text-decoration-color: var(--rust); text-underline-offset: 4px; font-size: 0.9rem; }
+.footer-inner a { padding-block: 6px; color: var(--white); text-decoration-color: var(--rust); text-underline-offset: 4px; font-size: 0.9rem; }
 .footer-brand { font-family: var(--display); font-size: 1.6rem !important; text-decoration: none; }
 .footer-brand span { color: var(--forest-hair); font-family: var(--mono); font-size: 0.75rem; font-variation-settings: 'wdth' 87.5; }
 
