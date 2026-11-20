@@ -215,8 +215,9 @@ Hand-cut and honest.
 
 ### Step Panel (signature component)
 - A **readout bar** of bordered mono cells: a rust "Latest step" cell with a white dot, then project, then year / discipline.
-- A **numeral column** with the "Step" label and the giant rust numeral.
-- A **photo frame** at 16:9 with leader-line callouts and a caption strip ("Photo from step NN" when the photo comes from an earlier step).
+- A **cover title block** above it: the eyebrow, display line and location sit inside the same 2px ink border as the panel, so the headline reads as the manual's title.
+- A **numeral column** with the "Step IT·" label (project code) and the giant rust numeral.
+- A **photo frame** at 16:9 with leader-line callouts. When the newest step has no lead photo, the frame borrows the newest earlier one in the same project and marks it as **borrowed**: inset on forest screen, callouts hidden, and a rust-outlined "Photo from step IT·02" tag, so the Parts box is never contradicted.
 - A **side column** with the bold title, the Parts box (chips), the Takeaway box (rust PENDING stamp when unset), and the "Open the notebook" dark button linking to that step.
 - `manual.js` fills it from the newest entry in `notebook.html`, and the static markup is the fallback.
 
@@ -227,7 +228,12 @@ Hand-cut and honest.
 - A 1px ink border with a forest mono header strip (an ink strip for Takeaway) and 10–12px body padding. They're used for Parts, Question / Test / Takeaway, project facts, and the anatomy diagram.
 
 ### Notebook Step
-- `<article class="notebook-entry">`, unchanged for hand editing. JS adds `id` (`step-<project>-NN`), the numeral, `is-latest`, edge codes on figures, and the PENDING stamp. There's an optional `<ul class="entry-parts">` and an optional `figure[data-lead]` with callouts. Step-through keys are J / K.
+- `<article class="notebook-entry">`, unchanged for hand editing. JS adds `id` (`step-<project>-NN`), the numeral, a **project code** chip ("Step IT·", ink, or rust on the step in focus), `is-latest`, edge codes on figures (`IT·02 / F01`), and the PENDING stamp. Codes come from the project name's initials (Initiative Tracker → IT, Fab Academy → FA), so new projects need no setup. There's an optional `<ul class="entry-parts">` and an optional `figure[data-lead]` with callouts.
+- Step-through keys are J / K. The hint hides on touch devices.
+- **On phones**, older steps collapse to title, parts and takeaway, with a full-width "Show full step" / "Hide full step" toggle. A step opens itself when it's linked to or stepped onto.
+
+### 404
+- A step panel with an "Error / 404 / Page not found" readout, a rust "??" numeral, a TrashHand line ("This step isn't in the manual."), and two ways back: the latest step and the notebook.
 
 ### Contents List (selected work)
 - Entry 01 is a contents entry with a 4:3 figure plate in a 2px ink border. Entries 02–03 are contents rows: rust index, bold title, a dotted forest leader, the mono type, and ↗.
@@ -243,6 +249,8 @@ Hand-cut and honest.
 - **Do** set step numerals and short headlines in TrashHand, and long titles and all reading text in Atkinson Hyperlegible Next.
 - **Do** box and label fields with forest header strips, and use an ink strip for Takeaway.
 - **Do** annotate lead photos with leader-line callouts that name real parts, placed where the part actually is.
+- **Do** mark any photo shown outside its own step as borrowed, with its callouts off.
+- **Do** host every image in `assets/`; nothing hotlinked.
 - **Do** keep readout labels at 12px or larger, in Martian Mono at width 87.5.
 - **Do** honor `prefers-reduced-motion`; the only motion is the callout lines drawing in once.
 

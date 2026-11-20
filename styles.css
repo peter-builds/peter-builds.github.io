@@ -136,8 +136,11 @@ p { text-wrap: pretty; }
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     align-items: end;
     gap: 24px 56px;
-    padding-block: 40px 28px;
+    padding: 36px 28px 24px;
+    border: var(--rule);
+    border-bottom: 0;
 }
+.cover-section { padding-top: 32px; }
 .cover h1 {
     margin: 0;
     font-family: var(--display);
@@ -149,7 +152,8 @@ p { text-wrap: pretty; }
 .cover-side { padding-bottom: 6px; }
 .hero-intro { max-width: 470px; margin-bottom: 20px; font-size: 1.1rem; line-height: 1.55; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
-.hero-location { margin: 20px 0 0; color: var(--muted); }
+.hero-location { margin: 18px 0 0; color: var(--muted); }
+.hero-intro:last-child, .cover-side .hero-actions:last-child { margin-bottom: 0; }
 .hero-location span { padding-inline: 4px; color: var(--rust); }
 
 /* The step panel: one page of the manual */
@@ -198,6 +202,13 @@ p { text-wrap: pretty; }
 .frame-caption b { color: var(--ink); font-weight: 500; }
 .step-grid > .frame { border-right: var(--rule); display: flex; flex-direction: column; }
 .step-grid > .frame .frame-caption { margin-top: auto; }
+
+/* A photo borrowed from an earlier step: inset on forest screen, callouts off, tagged. */
+.frame.is-borrowed { background: var(--forest-screen); }
+.frame.is-borrowed .frame-media { margin: 28px 36px 18px; border: 1px solid var(--ink); }
+.frame.is-borrowed .callouts { display: none; }
+.frame.is-borrowed .frame-caption { background: var(--stock); }
+.frame.is-borrowed .frame-caption b { padding: 1px 8px; border: 2px solid var(--rust); color: var(--rust); text-transform: uppercase; white-space: nowrap; }
 
 /* Leader-line callouts, positioned by --x / --y on the photo */
 .callouts { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
@@ -410,6 +421,20 @@ p { text-wrap: pretty; }
 .contact-value { overflow-wrap: anywhere; font-size: 1.15rem; font-weight: 700; transition: color 160ms ease; }
 .contact-arrow { color: var(--rust); }
 
+/* 404: a missing step */
+.missing { min-height: calc(100vh - 176px); padding-block: 64px 96px; }
+.missing-panel { margin-bottom: 0; }
+.missing-grid { display: grid; grid-template-columns: 190px minmax(0, 1fr); }
+.missing-copy { padding: 28px 32px 32px; }
+.missing-copy h1 { max-width: 14ch; margin-bottom: 16px; font-family: var(--display); font-size: 4rem; font-weight: 400; line-height: 0.98; }
+.missing-copy p { max-width: 52ch; margin-bottom: 24px; font-size: 1.1rem; }
+@media (max-width: 620px) {
+    .missing { padding-block: 32px 64px; }
+    .missing-grid { grid-template-columns: 1fr; }
+    .missing-copy { padding: 18px 16px 22px; }
+    .missing-copy h1 { font-size: 2.8rem; }
+}
+
 /* ==========================================================================
    NOTEBOOK / numbered steps
    ========================================================================== */
@@ -424,6 +449,8 @@ p { text-wrap: pretty; }
 .step-index a:hover { background: var(--forest); border-color: var(--forest); color: var(--white); }
 .step-index a.is-latest { background: var(--rust); border-color: var(--rust); color: var(--white); }
 .key-hint { margin: 12px 0 0; color: var(--muted); }
+@media (hover: none), (pointer: coarse) { .key-hint { display: none; } }
+.step-toggle { display: none; }
 .key-hint kbd { display: inline-block; min-width: 22px; padding: 1px 6px; border: 1px solid var(--ink); border-bottom-width: 2px; font-family: inherit; text-align: center; }
 
 .notebook-list { padding-block: 40px 100px; }
@@ -443,7 +470,8 @@ p { text-wrap: pretty; }
     text-transform: uppercase;
 }
 .notebook-entry > .entry-meta span { display: block; margin-top: 6px; color: var(--muted); }
-.notebook-entry[data-step] > .entry-meta::after {
+.step-code { display: inline-block; margin-top: 16px; padding: 2px 8px; background: var(--ink); color: var(--white); font-weight: 500; }
+.notebook-entry.is-latest .step-code, .notebook-entry:target .step-code { background: var(--rust); }.notebook-entry[data-step] > .entry-meta::after {
     content: attr(data-step-label);
     display: block;
     margin-top: 14px;
@@ -457,7 +485,7 @@ p { text-wrap: pretty; }
 .notebook-entry.is-latest > .entry-meta::after, .notebook-entry:target > .entry-meta::after { color: var(--rust); }
 .notebook-entry.is-latest, .notebook-entry:target { border-color: var(--ink); }
 .notebook-entry:target { outline: 4px solid var(--rust); outline-offset: 4px; }
-.notebook-entry > div { padding: 22px 26px 26px; border-left: var(--rule); }
+.notebook-entry > div:not(.entry-meta) { padding: 22px 26px 26px; border-left: var(--rule); }
 .notebook-entry h2 { max-width: 760px; margin-bottom: 14px; font-size: 1.85rem; font-weight: 800; line-height: 1.15; }
 .notebook-entry .entry-lead { max-width: 72ch; margin-bottom: 22px; font-size: 1.05rem; }
 .entry-parts { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; padding: 0; list-style: none; }
@@ -525,9 +553,14 @@ p { text-wrap: pretty; }
     .site-header { padding-block: 8px 10px; }
     .brand { width: 100px; height: 46px; }
     .site-nav a { padding: 0.4rem 0.55rem; font-size: 0.9rem; }
-    .cover-section { display: flex; flex-direction: column; }
+    .cover-section { display: flex; flex-direction: column; padding-top: 0; }
     .cover { display: contents; }
-    .cover > div:first-child { order: 1; padding-block: 22px 18px; }
+    .cover > div:first-child { display: contents; }
+    .cover .eyebrow { order: 1; margin-top: 22px; }
+    .cover h1 { order: 1; margin-bottom: 18px; }
+    .cover .hero-location { order: 3; margin: 0 0 16px; }
+    .frame.is-borrowed .frame-media { margin: 12px 14px 10px; }
+    .frame.is-borrowed .frame-caption { flex-direction: column; align-items: flex-start; gap: 4px; }
     .cover .eyebrow { margin-bottom: 10px; }
     .cover h1 { font-size: 3rem; }
     .step-panel { order: 2; margin-bottom: 28px; }
@@ -570,15 +603,35 @@ p { text-wrap: pretty; }
     .notebook-list { padding-block: 28px 65px; }
     .notebook-entry { grid-template-columns: 1fr; }
     .notebook-entry > .entry-meta { position: static; display: grid; grid-template-columns: 1fr auto; align-items: end; column-gap: 12px; border-bottom: var(--rule); padding: 12px 14px; }
-    .notebook-entry > .entry-meta span { grid-column: 1; margin-top: 2px; }
-    .notebook-entry[data-step] > .entry-meta::after { grid-column: 2; grid-row: 1 / span 2; }
+    .notebook-entry > .entry-meta span, .notebook-entry > .entry-meta .step-code { grid-column: 1; margin-top: 2px; justify-self: start; }
+    .notebook-entry > .entry-meta .step-code { margin-top: 8px; }
+    .notebook-entry[data-step] > .entry-meta::after { grid-column: 2; grid-row: 1 / span 3; }
     .step-index section { border-right: 0; border-top: 1px solid var(--ink); }
     .step-index section:first-child { border-top: 0; }
-    .notebook-entry > div { border-left: 0; }
+    .notebook-entry > div:not(.entry-meta) { border-left: 0; }
     .notebook-entry[data-step] > .entry-meta::after { margin-top: 0; font-size: 4.5rem; }
-    .notebook-entry > div { padding: 18px 16px 20px; }
+    .notebook-entry > div:not(.entry-meta) { padding: 18px 16px 20px; }
     .notebook-entry h2 { font-size: 1.5rem; }
     .entry-gallery { grid-template-columns: 1fr; gap: 12px; }
+    .notebook-entry.is-collapsed .entry-lead,
+    .notebook-entry.is-collapsed .entry-notes > div:not(:last-child),
+    .notebook-entry.is-collapsed .entry-gallery,
+    .notebook-entry.is-collapsed .notebook-source { display: none; }
+    .notebook-entry.is-collapsed .entry-notes > div:last-child { border-top: 0; }
+    .step-toggle {
+        display: flex;
+        width: 100%;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        border: 2px solid var(--ink);
+        background: var(--stock);
+        color: var(--ink);
+        font: 700 0.95rem/1 var(--sans);
+        cursor: pointer;
+    }
+    .step-toggle[aria-expanded="true"] { background: var(--forest-screen); }
     .entry-gallery figure:last-child:nth-child(odd):not(:only-child) img { aspect-ratio: 4 / 3; }
     .entry-gallery-single { grid-template-columns: 1fr; }
     .contact-link { grid-template-columns: 82px 1fr 18px; gap: 10px; min-height: 72px; }

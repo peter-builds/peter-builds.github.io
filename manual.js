@@ -22,7 +22,15 @@
         return { name: name.trim() || 'Notebook', detail: detail ? detail.textContent.trim() : '' };
     }
 
-    /* Returns entries in page order with project, step number and id. */
+    /* Project code from the project name: "Initiative Tracker" -> IT, "Fab Academy" -> FA, "Robot" -> RO. */
+    function codeOf(name) {
+        var words = name.replace(/[^A-Za-z0-9 ]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+        if (!words.length) return 'NB';
+        if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+        return words.slice(0, 3).map(function (w) { return w[0]; }).join('').toUpperCase();
+    }
+
+    /* Returns entries in page order with project, step number, code and id. */
     function numberSteps(root) {
         var articles = Array.prototype.slice.call(root.querySelectorAll('.notebook-entry'));
         var counts = {};
@@ -32,6 +40,8 @@
             counts[key] = (counts[key] || 0) + 1;
             info[i].step = counts[key];
             info[i].label = pad(counts[key]);
+            info[i].prefix = codeOf(key);
+            info[i].code = info[i].prefix + '·' + info[i].label;
             info[i].id = 'step-' + slug(key) + '-' + info[i].label;
         }
         return info;
@@ -57,10 +67,18 @@
             a.id = s.id;
             a.setAttribute('data-step', s.label);
             var meta = a.querySelector('.entry-meta');
-            if (meta) meta.setAttribute('data-step-label', s.label);
+            if (meta) {
+                meta.setAttribute('data-step-label', s.label);
+                if (!meta.querySelector('.step-code')) {
+                    var chip = document.createElement('b');
+                    chip.className = 'step-code';
+                    chip.textContent = 'Step ' + s.prefix + '·';
+                    meta.appendChild(chip);
+                }
+            }
             if (idx === 0) a.classList.add('is-latest');
             a.querySelectorAll('.entry-gallery figure').forEach(function (fig, f) {
-                fig.setAttribute('data-edge', 'S' + s.label + ' / F' + pad(f + 1));
+                fig.setAttribute('data-edge', s.code + ' / F' + pad(f + 1));
             });
             a.querySelectorAll('.entry-notes p').forEach(function (p) {
                 if (textOf(p).toUpperCase() === 'PENDING') {
@@ -68,6 +86,33 @@
                 }
             });
         });
+
+        /* Older steps collapse to title + parts + takeaway on phones (CSS applies it under 620px). */
+        steps.forEach(function (s, idx) {
+            if (idx === 0) return;
+            var body = s.el.querySelector(':scope > div:not(.entry-meta)');
+            if (!body || body.querySelector('.step-toggle')) return;
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'step-toggle';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.textContent = 'Show full step';
+            btn.addEventListener('click', function () { setOpen(s.el, s.el.classList.contains('is-collapsed')); });
+            body.appendChild(btn);
+            s.el.classList.add('is-collapsed');
+        });
+        function setOpen(el, open) {
+            el.classList.toggle('is-collapsed', !open);
+            var b = el.querySelector('.step-toggle');
+            if (b) { b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'Hide full step' : 'Show full step'; }
+        }
+        function openTarget() {
+            var id = location.hash.slice(1);
+            var el = id && document.getElementById(id);
+            if (el && el.classList.contains('notebook-entry')) setOpen(el, true);
+        }
+        window.addEventListener('hashchange', openTarget);
+        openTarget();
 
         var index = document.querySelector('.step-index');
         if (index) {
@@ -82,7 +127,7 @@
             });
             index.innerHTML = groups.map(function (name) {
                 var items = byName[name].slice().reverse();
-                return '<section><h2><b>' + esc(name) + '</b> / ' + items.length + ' steps</h2><ol>' +
+                return '<section><h2><b>' + esc(name) + '</b> / ' + esc(items[0].prefix) + ' / ' + items.length + ' steps</h2><ol>' +
                     items.map(function (s) {
                         return '<li><a href="#' + s.id + '"' + (s.el.classList.contains('is-latest') ? ' class="is-latest"' : '') +
                             ' aria-label="' + esc(name + ' step ' + s.label + ': ' + textOf(s.el.querySelector('h2'))) + '">' + s.label + '</a></li>';
@@ -106,6 +151,7 @@
             if (k === 'j' && steps[0].el.offsetTop > y) next = 0;
             var target = steps[next];
             history.replaceState(null, '', '#' + target.id);
+            openTarget();
             target.el.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
             target.el.querySelector('h2') && target.el.setAttribute('tabindex', '-1');
             target.el.focus({ preventScroll: true });
@@ -128,6 +174,7 @@
                 set('[data-field="project"]', latest.project.name);
                 set('[data-field="detail"]', latest.project.detail);
                 set('[data-field="step"]', latest.label);
+                set('[data-field="code"]', 'Step ' + latest.prefix + '·');
                 set('[data-field="title"]', textOf(a.querySelector('h2')));
 
                 var take = takeawayOf(a);
@@ -175,8 +222,10 @@
                     if (callouts && mine) mine.innerHTML = callouts.innerHTML;
                     var cap = frame.querySelector('[data-field="caption"]');
                     if (cap) cap.textContent = textOf(source.querySelector('figcaption'));
+                    var borrowed = sourceStep !== latest;
+                    frame.classList.toggle('is-borrowed', borrowed);
                     var from = frame.querySelector('[data-field="photo-step"]');
-                    if (from) from.textContent = sourceStep === latest ? 'Step ' + latest.label : 'Photo from step ' + sourceStep.label;
+                    if (from) from.textContent = borrowed ? 'Photo from step ' + sourceStep.code : 'Step ' + latest.code;
                 }
             })
             .catch(function () { /* static fallback stays in place */ });
