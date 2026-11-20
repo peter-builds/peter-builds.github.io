@@ -33,13 +33,127 @@
         <section class="notebook-list page-width">
 
 
-       <!-- This is a single notebook entry - copy paste until the next comment to keep the track going -->
-       <!-- Step numbers are automatic: the newest entry goes at the top and each project counts its own steps.
-            Optional: a <ul class="entry-parts"> list under the lead paragraph shows the parts used.
-            Optional: add data-lead to one figure to make it the home page photo, and add callouts on it:
-            <figure data-lead><div class="frame-media"><img ...><ul class="callouts">
-              <li style="--x:50%;--y:40%"><span>LED ring</span></li></ul></div><figcaption>...</figcaption></figure>
-            --x / --y are where the dot sits on the photo; data-side="left" puts the label on the left. -->
+        <!--
+        ==========================================================================
+          HOW TO ADD A NOTEBOOK ENTRY (no help needed)
+        ==========================================================================
+
+          1. Scroll down to the TEMPLATE block just below this guide.
+          2. Copy everything between  COPY FROM HERE  and  COPY TO HERE.
+          3. Paste it right under the line that says  PASTE NEW ENTRIES HERE.
+             Newest entry always goes on top.
+          4. Replace every ALL CAPS placeholder with your own words.
+          5. Save, preview, then commit and push (see the end of this guide).
+
+          WHAT HAPPENS AUTOMATICALLY (do not type these yourself)
+            The step number (01, 02, 03...) for each project.
+            The project code chip (Initiative Tracker = IT, a new project gets its own).
+            The project index at the top of this page.
+            The home page "Latest step" panel (it always shows the top entry).
+            The red PENDING stamp, if your Takeaway is the word PENDING.
+            Photo labels like IT.04 / F01.
+
+          THE PARTS OF AN ENTRY
+            PROJECT NAME   Must be spelled exactly the same every time for that
+                           project, or it will count as a new project.
+                           Example: Initiative Tracker
+            YEAR / TOPIC   Example: 2026 / Electronics
+            TITLE          One line saying what this step is about.
+            LEAD           Your write-up for the week. As long as you like.
+            PARTS          One part per line item. Delete the whole list if none.
+            QUESTION       What you are trying to figure out.
+            TEST           What you will try, or tried.
+            TAKEAWAY       What you learned. Type PENDING until you know.
+                           You can come back later and replace PENDING.
+
+          PHOTOS
+            Make a new folder for each entry inside  assets/notebook images/
+            Example folder name: entryNov2026  (short, no special characters)
+            Every photo needs: the file path, a short alt description (for
+            screen readers), and a caption.
+            Video works too; there is a commented video example in the template.
+            No photos this week? Delete the whole gallery block. The home page
+            will borrow your last photo from the same project and tag it.
+
+          HOME PAGE PHOTO WITH PART LABELS (optional)
+            Put the word  data-lead  on ONE figure (the template already does).
+            That photo becomes the home page photo for this step.
+            Part labels: each label is one line inside the callouts list.
+              x  how far across the photo the dot sits, in percent (0 = left edge)
+              y  how far down the photo the dot sits, in percent (0 = top edge)
+              len  length of the line from the dot to the label (try 30px)
+              data-side="left"  puts the label on the left of the dot
+              data-mobile="hide"  hides that label on phones if labels crowd
+            Tip: open the photo in Preview, hover over the part, and estimate
+            the percent across and down. Adjust after you preview.
+            Do not want labels? Delete the whole callouts list.
+
+          PREVIEW BEFORE YOU PUBLISH
+            In Terminal, from this project folder, run:
+              python3 -m http.server 8000
+            Then open http://localhost:8000/notebook.html in your browser.
+            Press Control + C in Terminal to stop it.
+
+          PUBLISH
+            git add .
+            git commit -m "Notebook: short description of the step"
+            git push
+            Then hard refresh the site (Command + Shift + R).
+
+          IF SOMETHING LOOKS BROKEN
+            Most problems are a missing closing tag. Every opening tag such as
+            article, div, ul, figure needs its matching closing tag.
+            Compare your entry with the template, or with the entry below it.
+        ==========================================================================
+        -->
+
+        <template id="notebook-entry-template">
+            <!-- ======================== COPY FROM HERE ======================== -->
+            <!-- ENTRY: WEEK OF MONTH DAY -->
+            <article class="notebook-entry">
+                <div class="entry-meta">PROJECT NAME <span>YEAR / TOPIC</span></div>
+                <div>
+                    <h2>TITLE OF THIS STEP</h2>
+                    <p class="entry-lead">WRITE-UP FOR THE WEEK. What you planned, what you did, what went wrong, what you will do next.</p>
+                    <ul class="entry-parts">
+                        <li>PART ONE</li>
+                        <li>PART TWO</li>
+                        <li>PART THREE</li>
+                    </ul>
+                    <div class="entry-notes">
+                        <div><h3>Question</h3><p>WHAT ARE YOU TRYING TO FIGURE OUT?</p></div>
+                        <div><h3>Test</h3><p>WHAT WILL YOU TRY, OR WHAT DID YOU TRY?</p></div>
+                        <div><h3>Takeaway</h3><p>PENDING</p></div>
+                    </div>
+                    <div class="entry-gallery" aria-label="PROJECT NAME photos">
+                        <figure data-lead>
+                            <div class="frame-media">
+                                <img src="assets/notebook images/FOLDER/PHOTO-1.jpg" alt="SHORT DESCRIPTION OF THE PHOTO" loading="lazy">
+                                <ul class="callouts" aria-label="Parts in this photo">
+                                    <li style="--x:30%;--y:40%;--len:30px"><span>PART LABEL</span></li>
+                                    <li style="--x:70%;--y:60%;--len:30px" data-side="left"><span>PART LABEL</span></li>
+                                </ul>
+                            </div>
+                            <figcaption>CAPTION FOR PHOTO 1</figcaption>
+                        </figure>
+                        <figure><img src="assets/notebook images/FOLDER/PHOTO-2.jpg" alt="SHORT DESCRIPTION OF THE PHOTO" loading="lazy"><figcaption>CAPTION FOR PHOTO 2</figcaption></figure>
+                        <figure><img src="assets/notebook images/FOLDER/PHOTO-3.jpg" alt="SHORT DESCRIPTION OF THE PHOTO" loading="lazy"><figcaption>CAPTION FOR PHOTO 3</figcaption></figure>
+                        <!-- VIDEO EXAMPLE: remove the comment marks around it to use it
+                        <figure>
+                            <video controls preload="metadata" aria-label="SHORT DESCRIPTION OF THE VIDEO">
+                                <source src="assets/notebook images/FOLDER/VIDEO.mp4#t=0.5" type="video/mp4">
+                            </video>
+                            <figcaption>CAPTION FOR THE VIDEO</figcaption>
+                        </figure>
+                        -->
+                    </div>
+                </div>
+            </article>
+            <!-- ======================== COPY TO HERE ========================== -->
+        </template>
+
+        <!-- ======================== PASTE NEW ENTRIES HERE (newest on top) ======================== -->
+
             <!-- ENTRY W/O 11/16-->
             <article class="notebook-entry">
                 <div class="entry-meta">Initiative Tracker <span>2026 / Electronics/ CAD</span></div>
