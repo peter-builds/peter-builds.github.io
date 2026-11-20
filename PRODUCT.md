@@ -34,6 +34,7 @@ Peter Perez is a working engineer-educator. He grew a two-printer program into a
 
 - **Stack:** static, hand-edited HTML and a single shared stylesheet (`styles.css`). No build step and no framework. Google Fonts are loaded from CDN, and TrashHand is self-hosted.
 - **Written content is frozen.** Do not change any existing copy, especially on the notebook page. It is handwritten and hand-designed by Peter. Design work may restyle or restructure presentation but must not rewrite, trim, or reorder the words. Ask before touching any text.
+- **Line lengths stay as they are (hard rule).** The notebook is a stream-of-consciousness system, and its long, unbroken lines are part of how it works. Do not add max-width, `ch` caps, or column limits to reading text anywhere on the site, and treat line-length warnings from detectors or audits as accepted, not as findings. (Confirmed 2026-11-20.)
 - The site must stay easy for Peter to edit by hand, so new notebook entries can be added without tooling.
 - **Magis et Ingenium Guild** (`magis-et-ingenium/`, `m-e-i-guild-register.html`, `mig-images/`) is currently a **separate sub-site** with its own look, hosted here only. It is out of scope for Peter Builds design work for now. *Open decision:* it may be brought under the site once the guild is up and running.
 

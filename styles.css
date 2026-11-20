@@ -52,7 +52,7 @@ body {
 
 ::selection { background: var(--forest); color: var(--white); }
 
-img, video { display: block; max-width: 100%; }
+img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 4px; }
 a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
 h1, h2, h3, p { margin-top: 0; }

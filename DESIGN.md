@@ -181,6 +181,8 @@ The palette is a two-color print run on white stock, plus one marking ink.
 ### Named Rules
 **The Short Hand Rule.** TrashHand only sets numerals and short headlines (about six words or fewer). Anything a reader has to work through goes in Atkinson.
 
+**The Stream Rule (hard rule).** Reading text keeps its current line length. The notebook is a stream-of-consciousness record and its long lines are intentional, so never add max-width or `ch` caps to body copy on any page. Line-length detector warnings are accepted.
+
 **The Readout Label Rule.** The mono labels (eyebrows, "01 / …" indices, ↗ arrows, readout cells) are a chosen signature with a slightly cyberpunk, instrument-readout feel. Keep them, make them distinctive through placement and treatment, and never set them below 12px.
 
 ## Layout
@@ -260,4 +262,5 @@ Hand-cut and honest.
 - **Don't** round corners on buttons, panels, frames, or chips.
 - **Don't** use rust as a decorative third color, or show two rust numerals at once.
 - **Don't** rewrite, trim, or reorder Peter's handwritten copy. Only short labels with his approval.
+- **Don't** narrow reading text to shorten line length. Long lines are part of the notebook's stream-of-consciousness format (The Stream Rule).
 - **Don't** apply this system to the Magis et Ingenium Guild pages. They keep their own look for now.
