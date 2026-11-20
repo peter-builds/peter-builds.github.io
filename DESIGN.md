@@ -216,7 +216,7 @@ Hand-cut and honest.
 ### Step Panel (signature component)
 - A **readout bar** of bordered mono cells: a rust "Latest step" cell with a white dot, then project, then year / discipline.
 - A **cover title block** above it: the eyebrow, display line and location sit inside the same 2px ink border as the panel, so the headline reads as the manual's title.
-- A **numeral column** with the "Step IT·" label (project code) and the giant rust numeral.
+- A **numeral column** with the "Step IT·03" label (full step code) and the giant rust numeral.
 - A **photo frame** at 16:9 with leader-line callouts. When the newest step has no lead photo, the frame borrows the newest earlier one in the same project and marks it as **borrowed**: inset on forest screen, callouts hidden, and a rust-outlined "Photo from step IT·02" tag, so the Parts box is never contradicted.
 - A **side column** with the bold title, the Parts box (chips), the Takeaway box (rust PENDING stamp when unset), and the "Open the notebook" dark button linking to that step.
 - `manual.js` fills it from the newest entry in `notebook.html`, and the static markup is the fallback.
@@ -228,7 +228,7 @@ Hand-cut and honest.
 - A 1px ink border with a forest mono header strip (an ink strip for Takeaway) and 10–12px body padding. They're used for Parts, Question / Test / Takeaway, project facts, and the anatomy diagram.
 
 ### Notebook Step
-- `<article class="notebook-entry">`, unchanged for hand editing. JS adds `id` (`step-<project>-NN`), the numeral, a **project code** chip ("Step IT·", ink, or rust on the step in focus), `is-latest`, edge codes on figures (`IT·02 / F01`), and the PENDING stamp. Codes come from the project name's initials (Initiative Tracker → IT, Fab Academy → FA), so new projects need no setup. There's an optional `<ul class="entry-parts">` and an optional `figure[data-lead]` with callouts.
+- `<article class="notebook-entry">`, unchanged for hand editing. JS adds `id` (`step-<project>-NN`), the numeral, a **project code** chip ("Step IT·03", ink, or rust on the step in focus), `is-latest`, edge codes on figures (`IT·02 / F01`), and the PENDING stamp. Codes come from the project name's initials (Initiative Tracker → IT, DAP-R → DR), so new projects need no setup. There's an optional `<ul class="entry-parts">` and an optional `figure[data-lead]` with callouts.
 - Step-through keys are J / K. The hint hides on touch devices.
 - **On phones**, older steps collapse to title, parts and takeaway, with a full-width "Show full step" / "Hide full step" toggle. A step opens itself when it's linked to or stepped onto.
 

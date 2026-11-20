@@ -72,7 +72,7 @@
                 if (!meta.querySelector('.step-code')) {
                     var chip = document.createElement('b');
                     chip.className = 'step-code';
-                    chip.textContent = 'Step ' + s.prefix + '·';
+                    chip.textContent = 'Step ' + s.code;
                     meta.appendChild(chip);
                 }
             }
@@ -174,7 +174,7 @@
                 set('[data-field="project"]', latest.project.name);
                 set('[data-field="detail"]', latest.project.detail);
                 set('[data-field="step"]', latest.label);
-                set('[data-field="code"]', 'Step ' + latest.prefix + '·');
+                set('[data-field="code"]', 'Step ' + latest.code);
                 set('[data-field="title"]', textOf(a.querySelector('h2')));
 
                 var take = takeawayOf(a);
