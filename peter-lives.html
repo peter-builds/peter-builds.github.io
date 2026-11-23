@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Peter is reading, playing, listening to, and making off the workbench.">
+    <title>Peter-Lives | Peter Builds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="peter-lives.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Peter Builds home"><img src="assets/brand/IMG_2809.PNG" alt="Peter Builds"></a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="notebook.html">Notebook</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="peter-lives.html" aria-current="page">Peter-Lives</a>
+        </nav>
+        <a class="header-social" href="https://www.instagram.com/peter_builds_/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </header>
+    <main id="main">
+        <section class="page-heading" aria-labelledby="peter-lives-title">
+            <div class="page-width">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Personal log / Off the workbench</p>
+                <h1 id="peter-lives-title">Peter-Lives.</h1>
+                <p class="lives-intro">A collection of things I'm reading, playing, listening to, and making when I'm not supposed to be working.</p>
+            </div>
+        </section>
+        <div class="page-width lives-content">
+            <section aria-labelledby="lives-collections-title">
+                <div class="section-heading"><h2 id="lives-collections-title">Collections</h2></div>
+                <ul class="lives-collections">
+                    <li>
+                        <a href="https://www.thbk.me/@peter-builds/collections/2F4HwlSvjf6">
+                            <span class="lives-label">01 / Reading</span>
+                            <strong>To Be Read</strong>
+                            <span>The ever-growing bookshelf.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.thbk.me/@peter-builds/collections/2F4IvQezxrs">
+                            <span class="lives-label">02 / Gaming</span>
+                            <strong>To Be Beaten</strong>
+                            <span>One more game, eventually.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.thbk.me/@peter-builds/collections/2F4dU0yCJn6">
+                            <span class="lives-label">03 / Listening</span>
+                            <strong>Albums I Dig</strong>
+                            <span>Records worth revisiting.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.thbk.me/@peter-builds/collections/2F4IwszLJQe">
+                            <span class="lives-label">04 / Making</span>
+                            <strong>Peter Literally Builds</strong>
+                            <span>Side quests and experiments.</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="lives-feed" aria-labelledby="lives-feed-title">
+                <div class="section-heading"><h2 id="lives-feed-title">Latest posts</h2></div>
+                <div class="lives-filters" role="group" aria-label="Filter posts by category" hidden>
+                    <button type="button" data-category="all" aria-pressed="true">All</button>
+                    <button type="button" data-category="reading" aria-pressed="false">Reading</button>
+                    <button type="button" data-category="gaming" aria-pressed="false">Gaming</button>
+                    <button type="button" data-category="listening" aria-pressed="false">Listening</button>
+                    <button type="button" data-category="making" aria-pressed="false">Making</button>
+                </div>
+                <p class="lives-status" role="status"></p>
+                <noscript><p class="lives-status">Open a collection above to browse the posts on ThingsBook.</p></noscript>
+                <div class="lives-grid"></div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer"><div class="page-width footer-inner"><a class="footer-brand" href="index.html">Peter Builds <span> / Make. Learn. Repeat.</span></a><a href="mailto:peter@peter-builds.com">peter@peter-builds.com</a><p>Miami, Florida / 2026</p></div></footer>
+</body>
+</html>
