@@ -1,0 +1,7 @@
+{
+  "files": ["*.html"],
+  "exclude": ["m-e-i-guild-register.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
