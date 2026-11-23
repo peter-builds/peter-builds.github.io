@@ -1,7 +1,35 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-23T20:00:45.405Z",
+  "updatedAt": "2026-11-23T20:18:52.011Z",
   "entries": [
+    {
+      "id": "2F4hUL8b4Se",
+      "title": "In Between Dreams",
+      "category": "listening",
+      "date": "2026-11-23T20:17:13.694Z",
+      "description": "One of my favorite to relax to",
+      "image": "assets/peter-lives/2F4hUL8b4Se.jpg",
+      "url": "https://www.thbk.me/@peter-builds/collections/2F4dU0yCJn6?postId=2F4hUL8b4Se",
+      "credit": "Jack Johnson"
+    },
+    {
+      "id": "2F4hTnh3JH6",
+      "title": "The Wild Robot",
+      "category": "reading",
+      "date": "2026-11-23T20:16:44.475Z",
+      "description": "",
+      "image": "assets/peter-lives/2F4hTnh3JH6.jpg",
+      "url": "https://www.thbk.me/@peter-builds/collections/2F4HwlSvjf6?postId=2F4hTnh3JH6"
+    },
+    {
+      "id": "2F4hT8O3sye",
+      "title": "Pokémon Legends: Z-A",
+      "category": "gaming",
+      "date": "2026-11-23T20:16:08.385Z",
+      "description": "Have to beat that DLC",
+      "image": "assets/peter-lives/2F4hT8O3sye.jpg",
+      "url": "https://www.thbk.me/@peter-builds/collections/2F4IvQezxrs?postId=2F4hT8O3sye"
+    },
     {
       "id": "2F4dUe4Igcq",
       "title": "Demon Days",
